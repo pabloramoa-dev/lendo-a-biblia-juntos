@@ -1,4 +1,4 @@
-"""Orquestrador da publicação diária do @sabioefeliz.
+"""Orquestrador da publicação diária do @lendoabibliaexplicada.
 
 Uso:
     python -m src.main            # respeita DRY_RUN / PUBLICAR_ATIVO
@@ -61,9 +61,9 @@ def executar() -> dict:
 
     conta = pub.conferir_conta()
     resultado["conta"] = conta
-    if conta.get("username") and conta["username"].lower() not in {"sabioefeliz", "sabio_e_feliz"}:
+    if (conta.get("username") or "").lower().lstrip("@") != config.INSTAGRAM_USERNAME:
         raise RuntimeError(
-            f"INCIDENTE: o token aponta para @{conta['username']}, não para a conta de provérbios. Publicação abortada."
+            f"INCIDENTE: o token aponta para @{conta['username']}, não para @lendoabibliaexplicada. Publicação abortada."
         )
 
     url_video = url_publica(cfg, item["arquivo"])
