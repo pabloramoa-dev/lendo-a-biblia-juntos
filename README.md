@@ -1,4 +1,6 @@
-# Lendo a Bíblia Juntos
+# Lendo a Bíblia Explicada
+
+**Instagram oficial:** [@lendoabibliaexplicada](https://www.instagram.com/lendoabibliaexplicada/).
 
 Canal automatizado de leitura diária e comentada da Bíblia: um trecho de um
 Evangelho de manhã e um Salmo à noite, explicados em palavras simples.
