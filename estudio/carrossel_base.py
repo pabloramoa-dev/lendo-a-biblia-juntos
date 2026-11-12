@@ -1,4 +1,4 @@
-"""Base do estúdio de carrosséis do @sabioefeliz — o que é comum a qualquer
+"""Base do estúdio de carrosséis do @lendoabibliaexplicada — o que é comum a qualquer
 direção de arte.
 
 Aqui moram os tokens (medidas, paleta de apoio, tipografia com fallback), as
@@ -254,7 +254,7 @@ def rodape(d: ImageDraw.ImageDraw, i: int, n: int, cor=DOURADO,
     y = ALTURA - 126
     progresso(d, i, n, y, dourado_pontos or cor)
     f = fonte("sans_medium", 24)
-    escrever(d, (LARGURA / 2, y + 52), "@SABIOEFELIZ", f, cor + (205,), 6.5, "ma")
+    escrever(d, (LARGURA / 2, y + 52), "@LENDOABIBLIAEXPLICADA", f, cor + (205,), 6.5, "ma")
     if arraste and i < n - 1:
         fs = fonte("sans_medium", 23)
         escrever(d, (LARGURA - MOLDURA - 34, y + 4), "ARRASTE  →", fs,
