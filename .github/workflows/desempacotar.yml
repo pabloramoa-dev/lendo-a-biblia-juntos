@@ -1,0 +1,24 @@
+name: Desempacotar
+on:
+  push:
+    paths:
+      - pacote.tar.gz
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  abrir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Abrir o pacote e gravar os arquivos
+        run: |
+          test -f pacote.tar.gz || { echo "sem pacote"; exit 0; }
+          tar xzf pacote.tar.gz
+          git rm -q --cached pacote.tar.gz
+          rm -f pacote.tar.gz
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Motor de video e conteudo inicial"
+          git push
