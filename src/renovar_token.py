@@ -6,7 +6,7 @@ até a publicação falhar. Por isso a renovação é automática e roda toda se
 
 Fluxo:
   1. GET graph.instagram.com/refresh_access_token  -> credencial nova, +60 dias
-  2. grava o valor novo no Secret IG_ACCESS_TOKEN_SABIO pela API do GitHub,
+  2. grava o valor novo no Secret IG_ACCESS_TOKEN_BIBLIA pela API do GitHub,
      criptografado com a chave pública do repositório, como a API exige
 
 O passo 2 precisa de um PAT no Secret GH_PAT com permissão de escrita em
@@ -29,7 +29,7 @@ import requests
 from src import config
 
 TIMEOUT = 30
-NOME_SECRET = "IG_ACCESS_TOKEN_SABIO"
+NOME_SECRET = "IG_ACCESS_TOKEN_BIBLIA"
 
 
 def renovar(credencial: str) -> dict:
