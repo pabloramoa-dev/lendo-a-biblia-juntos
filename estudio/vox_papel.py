@@ -1,5 +1,5 @@
 """
-vox_papel.py — camada "colagem de papel" (estilo Vox) dos Reels do @sabioefeliz.
+vox_papel.py — camada "colagem de papel" (estilo Vox) dos Reels do @lendoabibliaexplicada.
 
 O episódio continua o mesmo: mesmo roteiro, mesma voz, mesmo lip sync, mesmo
 Sábio. Esta camada só troca a DIREÇÃO DE ARTE:
@@ -41,7 +41,7 @@ from PIL import Image, ImageDraw, ImageFilter
 
 FONTE = "Poppins"
 CACHE = os.path.join(tempfile.gettempdir(), "sabio_vox_cache")
-HANDLE = "@sabioefeliz"
+HANDLE = "@lendoabibliaexplicada"
 
 ESTILO = dict(
     fundo="#0f2f36",        # papel azul-petróleo (o azul da capa do canal)
