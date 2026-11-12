@@ -3,7 +3,7 @@ from __future__ import annotations
 
 HASHTAGS_BASE = [
     "#proverbios", "#sabedoria", "#reflexao", "#fedeCristo",
-    "#versiculododia", "#biblia", "#palavradedeus", "#sabioefeliz",
+    "#versiculododia", "#biblia", "#palavradedeus", "#lendoabibliaexplicada",
 ]
 
 RODAPE_FONTE = (
