@@ -77,7 +77,7 @@ def compor(ep,segs,pasta):
     for i,(b,s) in enumerate(zip(ep['batidas'],segs)):
         a=float(s['ini']);z=float(s['fim']);d=z-a
         spec=b.get('arte') or [None];tipo=spec[0];arg=spec[1] if len(spec)>1 else None
-        tag=b.get('hf',{}).get('selo') or f'EP {ep.get("ep",0):02d} · PARTE {ep.get("parte",1)} · SÁBIO E FELIZ'
+        tag=b.get('hf',{}).get('selo') or f'EP {ep.get("ep",0):02d} · PARTE {ep.get("parte",1)} · BÍBLIA EXPLICADA'
         title,size=bloco(titulo(b,ep,i))
         body,body_size=bloco(arg if arg is not None else (b.get('tela') or b['fala']),max_height=225,max_size=34,min_size=24,width=505 if tipo in ICONS else 790)
         if tipo in ICONS:
@@ -88,7 +88,7 @@ def compor(ep,segs,pasta):
             art=f'<img class="native-art" src="assets/arte{i}.png" alt="Arte do roteiro">'
         else:
             wave='<div class="wave">'+''.join(f'<i style="height:{17+k*19%44}px"></i>' for k in range(25))+'</div>' if tipo in ('direct','notificacao') else ''
-            label='PARA REFLETIR' if tipo=='seguir' and ep.get('parte')==1 else 'SÁBIO E FELIZ'
+            label='PARA REFLETIR' if tipo=='seguir' and ep.get('parte')==1 else 'BÍBLIA EXPLICADA'
             art=f'<div class="bubble" style="font-size:{body_size}px"><small>{label}</small>{body}{wave}<div class="underline"></div></div>'
         end=dur if i==len(segs)-1 else z
         parts.append(f'<section id="p{i}" class="clip panel" data-start="{a}" data-duration="{end-a}" data-track-index="2"><div id="c{i}" class="card"><div class="tape"></div><div class="eyebrow">{html.escape(str(tag))}</div><h1 style="font-size:{size}px">{title}</h1><div class="art">{art}</div></div></section>')
@@ -117,7 +117,7 @@ def compor(ep,segs,pasta):
                 anim.append(f'tl.set("#w{i}_{j}",{{color:"#f4cd72"}},{t});tl.set("#w{i}_{j}",{{color:"#ffffff"}},{endw});')
                 t=endw;j+=1
             stop=z if k==len(groups)-1 else t
-            parts.append(f'<div id="cap{i}_{k}" class="clip caps" data-start="{start}" data-duration="{stop-start}" data-track-index="3"><div class="speaker">SÁBIO E FELIZ</div><div class="words">{" ".join(spans)}</div></div>')
+            parts.append(f'<div id="cap{i}_{k}" class="clip caps" data-start="{start}" data-duration="{stop-start}" data-track-index="3"><div class="speaker">BÍBLIA EXPLICADA</div><div class="words">{" ".join(spans)}</div></div>')
     final,final_size=bloco(ep.get('fim') or ('CONTINUA NA PARTE 2' if ep.get('parte')==1 else 'PALAVRAS QUE ACOLHEM'),max_height=120,max_size=45)
     parts.append(f'<div id="outro" class="clip caps" data-start="{segs[-1]["fim"]}" data-duration="{TAIL}" data-track-index="3"><div class="speaker">PALAVRAS QUE ACOLHEM</div><div class="words" style="font-size:{final_size}px">{final}</div></div>')
     confetti=''
@@ -126,7 +126,7 @@ def compor(ep,segs,pasta):
         confetti+=f'<div id="f{k}" class="confetti" style="left:{x}px;background:{color}"></div>'
         anim.append(f'tl.fromTo("#f{k}",{{y:0,opacity:1,rotation:0}},{{y:{500+k*11},x:{(k%5-2)*35},rotation:{k*63},opacity:0,duration:1.3,immediateRender:false,ease:"power1.out"}},{segs[-1]["fim"]+k*.03});')
     anim.append(f'tl.fromTo("#progress",{{scaleX:0}},{{scaleX:1,duration:{dur},ease:"none"}},0);')
-    out=f'''<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="composition.css"></head><body><div id="root" data-composition-id="sabio-hf" data-width="1080" data-height="1920" data-duration="{dur}" data-fps="30"><video id="base" class="clip" src="assets/base.mp4" data-start="0" data-duration="{dur}" data-track-index="0" muted playsinline></video><div class="wash"></div><header><div class="brand">SÁBIO E FELIZ</div><div class="tag">PROVÉRBIOS</div></header>{''.join(parts)}{confetti}<footer><span>Um provérbio. Uma decisão melhor.</span><small>@sabioefeliz</small></footer><div id="progress"></div><div class="demo">SABEDORIA PARA O DIA A DIA</div><div id="grain"></div><div id="wipe"></div><audio id="voice" src="assets/mix.wav" data-start="0" data-duration="{dur}" data-track-index="4"></audio><script src="assets/gsap.min.js"></script><script>const tl=gsap.timeline({{paused:true}});{''.join(anim)}window.__timelines=window.__timelines||{{}};window.__timelines['sabio-hf']=tl;</script></div></body></html>'''
+    out=f'''<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="composition.css"></head><body><div id="root" data-composition-id="sabio-hf" data-width="1080" data-height="1920" data-duration="{dur}" data-fps="30"><video id="base" class="clip" src="assets/base.mp4" data-start="0" data-duration="{dur}" data-track-index="0" muted playsinline></video><div class="wash"></div><header><div class="brand">BÍBLIA EXPLICADA</div><div class="tag">PROVÉRBIOS</div></header>{''.join(parts)}{confetti}<footer><span>Um provérbio. Uma decisão melhor.</span><small>@sabioefeliz</small></footer><div id="progress"></div><div class="demo">SABEDORIA PARA O DIA A DIA</div><div id="grain"></div><div id="wipe"></div><audio id="voice" src="assets/mix.wav" data-start="0" data-duration="{dur}" data-track-index="4"></audio><script src="assets/gsap.min.js"></script><script>const tl=gsap.timeline({{paused:true}});{''.join(anim)}window.__timelines=window.__timelines||{{}};window.__timelines['sabio-hf']=tl;</script></div></body></html>'''
     (pasta/'index.html').write_text(out,encoding='utf-8')
     return dur
 
