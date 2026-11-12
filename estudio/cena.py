@@ -1,4 +1,4 @@
-"""Cena Manim do @sabioefeliz — o Seu Ranzinza contando o provérbio do dia.
+"""Cena Manim adaptada ao @lendoabibliaexplicada — o Seu Ranzinza contando o provérbio do dia.
 
 O personagem é EXATAMENTE o ranzinza() do repositório da previsão do tempo:
 os dois arquivos dela (previsao_lib.py e dvh_lib.py) foram trazidos para cá sem
@@ -229,7 +229,7 @@ def selo_referencia(referencia: str):
 
 
 def marca():
-    t = Text("@sabioefeliz", font=FONTE, weight=BOLD, font_size=30, color=WHITE)
+    t = Text("@lendoabibliaexplicada", font=FONTE, weight=BOLD, font_size=30, color=WHITE)
     banda = RoundedRectangle(width=t.width + 0.5, height=t.height + 0.3,
                              corner_radius=0.14, fill_color=BLACK, fill_opacity=0.55,
                              stroke_width=0)
