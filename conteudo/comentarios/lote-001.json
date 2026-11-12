@@ -1,0 +1,147 @@
+{
+ "M001": {"abertura": "Dia um. O evangelho de Marcos começa no deserto. Leia comigo.",
+  "blocos": [
+   {"ate": 1, "comentario": "Evangelho quer dizer boa notícia. Marcos já começa avisando: esta é a boa notícia sobre Jesus."},
+   {"ate": 3, "comentario": "Séculos antes, os profetas já tinham anunciado: alguém viria na frente para preparar o povo. Marcos diz que essa hora chegou."},
+   {"ate": 5, "comentario": "Esse mensageiro é João Batista. Ele chamava o povo a mudar de vida, e o batismo no rio era o sinal dessa mudança. Remissão quer dizer perdão."}],
+  "pergunta": "O que você precisa endireitar hoje para preparar o caminho?"},
+ "M002": {"abertura": "Dia dois. João Batista fala de alguém maior do que ele. Leia comigo.",
+  "blocos": [
+   {"ate": 6, "comentario": "João vivia de forma simples, como os antigos profetas. A roupa e a comida mostravam que ele não buscava conforto nem fama."},
+   {"ate": 8, "comentario": "Desamarrar a sandália era serviço de escravo. João diz que nem para isso se acha digno: quem vem depois dele é muito maior."}],
+  "pergunta": "Você consegue apontar para alguém maior do que você, sem querer o lugar principal?"},
+ "M003": {"abertura": "Dia três. Jesus entra em cena e é batizado. Leia comigo.",
+  "blocos": [
+   {"ate": 11, "comentario": "Jesus sai de Nazaré, uma cidade pequena, e é batizado como todo o povo. Logo depois, a voz do céu declara quem ele é: o Filho amado."},
+   {"ate": 13, "comentario": "Antes de começar a pregar, Jesus passa quarenta dias no deserto e é tentado. Marcos conta em poucas palavras: ele enfrentou a prova, e não esteve sozinho."}],
+  "pergunta": "Em que deserto você está hoje, e quem está com você nele?"},
+ "M004": {"abertura": "Dia quatro. Jesus começa a pregar e chama os primeiros discípulos. Leia comigo.",
+  "blocos": [
+   {"ate": 15, "comentario": "Esta é a primeira pregação de Jesus em Marcos. Arrepender-se é mudar de direção. Crer é confiar na boa notícia."},
+   {"ate": 17, "comentario": "Simão e André eram pescadores comuns, no meio do trabalho. Jesus usa o que eles já sabiam fazer: agora vão buscar pessoas."}],
+  "pergunta": "O que Jesus poderia usar do seu trabalho de todo dia?"},
+ "M005": {"abertura": "Dia cinco. Quatro pescadores largam tudo. Leia comigo.",
+  "blocos": [
+   {"ate": 18, "comentario": "Imediatamente é uma palavra que Marcos repete muito. Simão e André não pedem tempo para pensar: deixam as redes e vão."},
+   {"ate": 20, "comentario": "Tiago e João deixam o barco, o pai e o negócio da família. Seguir Jesus custou a eles algo concreto."}],
+  "pergunta": "Qual rede você teria dificuldade de deixar?"},
+ "M006": {"abertura": "Dia seis. Jesus ensina na sinagoga de Cafarnaum. Leia comigo.",
+  "blocos": [
+   {"ate": 22, "comentario": "A sinagoga era o lugar de reunião e ensino dos judeus. Os escribas, mestres da Lei, ensinavam citando outros mestres. Jesus falava com autoridade própria, e o povo percebeu."},
+   {"ate": 24, "comentario": "Espírito imundo é como Marcos chama um espírito mau. Repare: ele reconhece quem Jesus é antes de muita gente ali."}],
+  "pergunta": "De quem são as palavras que têm autoridade na sua vida?"},
+ "M007": {"abertura": "Dia sete. Uma ordem de Jesus, e o mal obedece. Leia comigo.",
+  "blocos": [
+   {"ate": 26, "comentario": "Jesus não faz ritual nem discurso longo. Uma ordem curta basta, e o homem fica livre."},
+   {"ate": 28, "comentario": "O povo se espanta porque o ensino vem junto com poder. E a notícia se espalha por toda a Galileia, a região do norte de Israel."}],
+  "pergunta": "O que você tem contado aos outros sobre o que Jesus faz?"},
+ "M008": {"abertura": "Dia oito. Da sinagoga para dentro de casa. Leia comigo.",
+  "blocos": [
+   {"ate": 31, "comentario": "Jesus cura a sogra de Simão dentro de casa, sem plateia. E ela, assim que se levanta, começa a servir."},
+   {"ate": 34, "comentario": "O povo espera o pôr do sol porque ali terminava o sábado, o dia de descanso. Então a cidade inteira aparece na porta."}],
+  "pergunta": "Quem você levaria até a porta daquela casa hoje?"},
+ "M009": {"abertura": "Dia nove. Depois de um dia cheio, Jesus procura silêncio. Leia comigo.",
+  "blocos": [
+   {"ate": 35, "comentario": "Depois de um dia de multidão, Jesus se levanta ainda no escuro para orar sozinho. Até ele separava esse tempo."},
+   {"ate": 39, "comentario": "Todos procuravam Jesus, mas ele não fica preso ao sucesso de uma cidade. Segue adiante, porque veio para pregar também nas outras aldeias."}],
+  "pergunta": "Qual é o seu lugar e a sua hora de silêncio?"},
+ "M010": {"abertura": "Dia dez. Um leproso chega perto de Jesus. Leia comigo.",
+  "blocos": [
+   {"ate": 42, "comentario": "O leproso vivia isolado, e ninguém podia tocá-lo. Jesus toca antes de curar. A compaixão veio primeiro."},
+   {"ate": 45, "comentario": "Pela Lei de Moisés, o sacerdote confirmava a cura, e a pessoa podia voltar ao convívio. Mas o homem espalha a notícia, e agora é Jesus quem precisa ficar fora das cidades."}],
+  "pergunta": "Quem ao seu redor precisa de um gesto de proximidade?"},
+ "M011": {"abertura": "Dia onze. Uma casa lotada e quatro amigos decididos. Leia comigo.",
+  "blocos": [
+   {"ate": 2, "comentario": "Jesus volta a Cafarnaum, e a casa enche tanto que não cabe mais ninguém, nem na porta."},
+   {"ate": 4, "comentario": "Os telhados eram planos, feitos de madeira e barro, com escada por fora. Os quatro amigos abrem um buraco e descem o doente na frente de Jesus."}],
+  "pergunta": "Por quem você abriria um telhado?"},
+ "M012": {"abertura": "Dia doze. Jesus diz algo que ninguém esperava. Leia comigo.",
+  "blocos": [
+   {"ate": 5, "comentario": "Jesus repara na fé dos amigos. E, antes de falar da paralisia, fala de perdão."},
+   {"ate": 8, "comentario": "Os escribas acertam num ponto: só Deus perdoa pecados. Por isso a frase de Jesus soa como blasfêmia, uma ofensa a Deus. A questão é exatamente esta: quem é Jesus?"}],
+  "pergunta": "O que você pediria primeiro: a cura ou o perdão?"},
+ "M013": {"abertura": "Dia treze. Jesus mostra que tem poder para perdoar. Leia comigo.",
+  "blocos": [
+   {"ate": 9, "comentario": "Dizer que perdoou é fácil, porque ninguém consegue conferir. Mandar um paralítico andar, todos veem na hora."},
+   {"ate": 12, "comentario": "Filho do homem é como Jesus costuma chamar a si mesmo. A cura que todos enxergam confirma o perdão que ninguém enxerga."}],
+  "pergunta": "Você já carregou alguma coisa que só o perdão resolve?"},
+ "M014": {"abertura": "Dia catorze. Jesus chama alguém que ninguém chamaria. Leia comigo.",
+  "blocos": [
+   {"ate": 14, "comentario": "Levi cobrava impostos para os romanos, e por isso era malvisto pelo próprio povo. Jesus diz só uma palavra, e ele se levanta e vai."},
+   {"ate": 15, "comentario": "Publicanos eram os cobradores de impostos. Sentar à mesa com alguém era sinal de amizade, e Jesus se senta com eles."}],
+  "pergunta": "Quem você não convidaria para a sua mesa?"},
+
+ "N001": {"abertura": "Boa noite. O Salmo um fala de dois caminhos. Leia comigo.",
+  "blocos": [
+   {"ate": 2, "comentario": "Bem-aventurado quer dizer feliz de verdade. O salmo começa pelo que essa pessoa evita e pelo que ela ama: a Palavra de Deus."},
+   {"ate": 3, "comentario": "A árvore junto à água não depende da chuva. É a imagem de quem tem raiz firme."},
+   {"ate": 6, "comentario": "A palha é leve, e o vento leva. São dois caminhos, e Deus conhece o caminho de quem é dele."}],
+  "pergunta": "Onde estão as suas raízes?"},
+ "N002": {"abertura": "Boa noite. No Salmo dois, as nações se agitam e Deus não se abala. Leia comigo.",
+  "blocos": [
+   {"ate": 3, "comentario": "O Ungido é o rei escolhido por Deus. Os poderosos se juntam para se livrar da autoridade dele."},
+   {"ate": 6, "comentario": "Deus não se assusta com a revolta. Sião é o monte de Jerusalém, e ali ele já colocou o seu Rei."}],
+  "pergunta": "O que tem agitado você, e que Deus continua governando?"},
+ "N003": {"abertura": "Boa noite. O Salmo dois continua: quem é o Rei que Deus escolheu. Leia comigo.",
+  "blocos": [
+   {"ate": 9, "comentario": "Deus chama o Rei de Filho e promete a ele todas as nações. O Novo Testamento aplica estas palavras a Jesus."},
+   {"ate": 12, "comentario": "Beijar era o gesto de respeito ao rei. O salmo termina com um convite: feliz é quem se abriga nele."}],
+  "pergunta": "Em quem você tem confiado para se abrigar?"},
+ "N004": {"abertura": "Boa noite. O Salmo três é a oração de alguém cercado. Leia comigo.",
+  "blocos": [
+   {"ate": 2, "comentario": "Pela tradição, Davi fez esta oração quando fugia do próprio filho, Absalão. Os inimigos diziam que nem Deus o ajudaria."},
+   {"ate": 5, "comentario": "Mesmo cercado, ele se deita e dorme. O sono tranquilo é sinal de confiança."},
+   {"ate": 8, "comentario": "As palavras são duras porque o perigo era real. Davi entrega a luta a Deus e termina pedindo bênção para o povo."}],
+  "pergunta": "O que você precisa entregar a Deus para dormir em paz hoje?"},
+ "N005": {"abertura": "Boa noite. O Salmo quatro é uma oração para o fim do dia. Leia comigo.",
+  "blocos": [
+   {"ate": 1, "comentario": "Davi começa lembrando o que Deus já fez por ele. A memória do livramento dá coragem para pedir de novo."},
+   {"ate": 3, "comentario": "Ele fala com quem o difama: até quando? E descansa numa certeza: Deus ouve quando ele chama."}],
+  "pergunta": "De que livramento você pode se lembrar esta noite?"},
+ "N006": {"abertura": "Boa noite. O Salmo quatro termina com uma frase para levar para a cama. Leia comigo.",
+  "blocos": [
+   {"ate": 5, "comentario": "Antes de dormir, o salmo pede silêncio e exame do coração. A agitação não precisa virar pecado."},
+   {"ate": 8, "comentario": "A alegria que Deus dá vale mais que colheita farta. Por isso ele consegue se deitar e dormir em paz."}],
+  "pergunta": "O que você precisa aquietar antes de dormir?"},
+ "N007": {"abertura": "Boa noite. O Salmo cinco é uma oração para a manhã seguinte. Leia comigo.",
+  "blocos": [
+   {"ate": 3, "comentario": "Davi ora logo cedo e depois fica vigiando, à espera da resposta. Orar e aguardar andam juntos."},
+   {"ate": 4, "comentario": "Ele sabe com quem fala: um Deus que não tem prazer no mal."}],
+  "pergunta": "Qual vai ser a sua primeira palavra a Deus amanhã cedo?"},
+ "N008": {"abertura": "Boa noite. Seguimos no Salmo cinco. Leia comigo.",
+  "blocos": [
+   {"ate": 6, "comentario": "O salmo fala forte contra a arrogância, a mentira e a violência. Deus não é indiferente ao mal."},
+   {"ate": 8, "comentario": "Davi não entra na casa de Deus por mérito, e sim pela bondade leal de Deus. E pede direção, porque há quem torça pela queda dele."}],
+  "pergunta": "Em que decisão você precisa pedir que Deus guie o caminho?"},
+ "N009": {"abertura": "Boa noite. Hoje, o final do Salmo cinco. Leia comigo.",
+  "blocos": [
+   {"ate": 10, "comentario": "Garganta como sepultura aberta: palavras que parecem agradáveis e fazem mal. Davi pede que Deus julgue, em vez de se vingar por conta própria."},
+   {"ate": 12, "comentario": "Quem confia em Deus tem motivo de alegria. O favor dele cerca a pessoa como um escudo."}],
+  "pergunta": "Você tem deixado a justiça com Deus?"},
+ "N010": {"abertura": "Boa noite. O Salmo seis é a oração de quem está esgotado. Leia comigo.",
+  "blocos": [
+   {"ate": 3, "comentario": "Davi está abatido, de corpo e de alma. A pergunta dele é a de muita gente: até quando?"},
+   {"ate": 5, "comentario": "Xeol é o nome hebraico do lugar dos mortos. Ele pede para viver e continuar louvando, apoiado na bondade de Deus."}],
+  "pergunta": "Qual é o seu até quando desta noite?"},
+ "N011": {"abertura": "Boa noite. O Salmo seis termina de um jeito diferente de como começou. Leia comigo.",
+  "blocos": [
+   {"ate": 7, "comentario": "O salmo não esconde o choro. A Bíblia dá palavras também para as noites ruins."},
+   {"ate": 10, "comentario": "De repente o tom muda: o Senhor ouviu. A situação ainda não mudou, mas Davi já tem certeza de que foi ouvido."}],
+  "pergunta": "Você consegue descansar sabendo que foi ouvido?"},
+ "N012": {"abertura": "Boa noite. No Salmo sete, Davi é acusado injustamente. Leia comigo.",
+  "blocos": [
+   {"ate": 2, "comentario": "Davi se sente caçado, como por um leão. O primeiro movimento dele é correr para Deus."},
+   {"ate": 5, "comentario": "Ele se examina diante de Deus: se eu fiz aquilo de que me acusam, que eu sofra as consequências. É a oração de quem tem a consciência limpa."}],
+  "pergunta": "Você pode levar a Deus alguma acusação injusta?"},
+ "N013": {"abertura": "Boa noite. Seguimos no Salmo sete. Leia comigo.",
+  "blocos": [
+   {"ate": 7, "comentario": "Davi pede que Deus se levante como juiz, diante de todos os povos."},
+   {"ate": 9, "comentario": "Ele não pede vingança, pede justiça: que o mal tenha fim e o justo fique firme. Deus conhece a mente e o coração."}],
+  "pergunta": "O que você deseja: vingança ou justiça?"},
+ "N014": {"abertura": "Boa noite. Hoje, o final do Salmo sete. Leia comigo.",
+  "blocos": [
+   {"ate": 13, "comentario": "Deus é escudo para uns e juiz para outros. A imagem do arco armado é um aviso: ainda há tempo de se converter."},
+   {"ate": 16, "comentario": "O mal volta para quem o planeja. Quem cava a cova acaba caindo nela."},
+   {"ate": 17, "comentario": "Depois de tudo, o salmo termina em louvor."}],
+  "pergunta": "Que motivo você tem para agradecer antes de dormir?"}
+}

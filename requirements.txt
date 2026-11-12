@@ -1,0 +1,3 @@
+# Publicação diária — de propósito leve: o workflow que posta não precisa
+# de motor de vídeo nenhum.
+requests==2.32.3
