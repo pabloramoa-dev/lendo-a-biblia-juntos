@@ -8,7 +8,7 @@ O que continua valendo, e não depende de ninguém:
   - lint editorial (campos, tamanho, promessas proibidas)
   - arquivo existe e o sha256 bate com o que foi renderizado
   - um post por dia, por tipo
-  - o token tem que apontar para @sabioefeliz, senão aborta
+  - o token tem que apontar para @lendoabibliaexplicada, senão aborta
 
 O que deixa de existir: a espera por uma pessoa. Um item que passa no lint
 vira 'aprovado' na mesma hora, com aprovado_por='automatico'.
