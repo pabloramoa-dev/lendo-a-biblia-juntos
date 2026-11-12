@@ -1,4 +1,4 @@
-"""Roteiro determinístico do canal Lendo a Bíblia Juntos.
+"""Roteiro determinístico do canal Lendo a Bíblia Explicada.
 
 O item traz a abertura, os blocos (versículos + comentário em palavras
 simples), uma pergunta de fecho e o convite final. Cada versículo vira um
@@ -8,7 +8,7 @@ com explicação.
 """
 from __future__ import annotations
 
-HANDLE = "@lendoabibliajuntos"
+HANDLE = "@lendoabibliaexplicada"
 
 
 def convite(item):
