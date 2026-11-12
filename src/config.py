@@ -1,4 +1,4 @@
-"""Configuração do pipeline @sabioefeliz.
+"""Configuração do pipeline @lendoabibliaexplicada.
 
 Regra de ouro: nada de segredo em código. Tudo vem de variável de ambiente,
 alimentada pelos Secrets/Variables do GitHub Actions.
@@ -10,6 +10,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
+INSTAGRAM_USERNAME = "lendoabibliaexplicada"
 
 # --- Caminhos do projeto -----------------------------------------------------
 CONTEUDO = RAIZ / "conteudo"
@@ -56,15 +57,15 @@ def _flag(nome: str, padrao: str = "false") -> bool:
 
 
 def carregar(exigir_credenciais: bool = True) -> Config:
-    obrigatorias = ["IG_USER_ID_SABIO", "IG_ACCESS_TOKEN_SABIO", "RAW_BASE_URL"]
+    obrigatorias = ["IG_USER_ID_BIBLIA", "IG_ACCESS_TOKEN_BIBLIA", "RAW_BASE_URL"]
     if exigir_credenciais:
         faltando = [k for k in obrigatorias if not os.getenv(k)]
         if faltando:
             raise RuntimeError(f"Variáveis obrigatórias ausentes: {faltando}")
 
     return Config(
-        ig_user_id=os.getenv("IG_USER_ID_SABIO", ""),
-        ig_token=os.getenv("IG_ACCESS_TOKEN_SABIO", ""),
+        ig_user_id=os.getenv("IG_USER_ID_BIBLIA", ""),
+        ig_token=os.getenv("IG_ACCESS_TOKEN_BIBLIA", ""),
         raw_base_url=os.getenv("RAW_BASE_URL", "").rstrip("/"),
         graph_version=os.getenv("GRAPH_API_VERSION", "v22.0"),
         publicar_ativo=_flag("PUBLICAR_ATIVO", "false"),
@@ -74,7 +75,7 @@ def carregar(exigir_credenciais: bool = True) -> Config:
 
 def esconder(texto: str) -> str:
     """Nunca deixar token vazar em log."""
-    tok = os.getenv("IG_ACCESS_TOKEN_SABIO", "")
+    tok = os.getenv("IG_ACCESS_TOKEN_BIBLIA", "")
     if tok and len(tok) > 8:
         texto = texto.replace(tok, "***TOKEN***")
     return texto
