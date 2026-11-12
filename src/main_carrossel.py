@@ -1,4 +1,4 @@
-"""Orquestrador da publicação do carrossel da tarde (@sabioefeliz).
+"""Orquestrador da publicação do carrossel da tarde (@lendoabibliaexplicada).
 
 Uso:
     python -m src.main_carrossel          # respeita DRY_RUN / PUBLICAR_ATIVO
@@ -65,10 +65,10 @@ def executar() -> dict:
 
     conta = pub.conferir_conta()
     resultado["conta"] = conta
-    if conta.get("username") and conta["username"].lower() not in {"sabioefeliz", "sabio_e_feliz"}:
+    if (conta.get("username") or "").lower().lstrip("@") != config.INSTAGRAM_USERNAME:
         raise RuntimeError(
             f"INCIDENTE: o token aponta para @{conta['username']}, não para a conta de "
-            "provérbios. Publicação abortada."
+            "@lendoabibliaexplicada. Publicação abortada."
         )
 
     filhos = [pub.criar_item_carrossel(url_publica(cfg, rel)) for rel in item["arquivos"]]
