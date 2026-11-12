@@ -1,4 +1,4 @@
-"""leitor_lib — o Leitor do canal "Lendo a Bíblia Juntos" e o cenário do lago.
+"""leitor_lib — o Leitor do canal "Lendo a Bíblia Explicada" e o cenário do lago.
 
 Mesma filosofia do previsao_lib: tudo desenhado por código, traço grosso,
 cabeça grande, personagem SEMPRE idêntico entre os vídeos.
