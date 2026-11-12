@@ -8,6 +8,15 @@ Evangelho de manhã e um Salmo à noite, explicados em palavras simples.
 O motor de vídeo veio do canal Sábio e Feliz (Manim + HyperFrames + voz Kokoro),
 com personagem, cenário e roteiro próprios.
 
+## Identidade e conexão com o Instagram
+
+- **Nome do canal:** Lendo a Bíblia Explicada.
+- **Usuário oficial:** `@lendoabibliaexplicada`.
+- **Trava de segurança:** os publicadores conferem o `username` retornado pela Meta e recusam publicar em outra conta.
+- **Secrets necessários na futura configuração:** `IG_USER_ID_BIBLIA` e `IG_ACCESS_TOKEN_BIBLIA`; não reutilize os secrets de outro canal.
+- **Endereço público dos arquivos:** configure `RAW_BASE_URL` para o endereço real deste repositório. Ao renomeá-lo no GitHub para `lendo-a-biblia-explicada`, atualize também essa variável.
+- **Publicação:** permanece desativada por padrão (`PUBLICAR_ATIVO=false`, `DRY_RUN=true`) até a conexão e validação da conta.
+
 ## O que tem aqui
 
 | Pasta | Conteúdo |
