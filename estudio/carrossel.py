@@ -1,4 +1,4 @@
-"""Estúdio de carrosséis do @sabioefeliz — direção "Manhã", aprovada em
+"""Estúdio de carrosséis do @lendoabibliaexplicada — direção "Manhã", aprovada em
 2026-09-06.
 
 Um carrossel são sete imagens de 1080x1350 (4:5, o formato que ocupa mais
@@ -98,7 +98,7 @@ def rodape(img: Image.Image, i: int, n: int, claro: bool):
     y = ALTURA - 108
     pontinhos(d, i, n, y, cor, apagado)
     f = fonte("sans_bold", 25)
-    escrever(d, (LARGURA / 2, y + 46), "@SABIOEFELIZ", f, cor + (215,), 6.0, "ma")
+    escrever(d, (LARGURA / 2, y + 46), "@LENDOABIBLIAEXPLICADA", f, cor + (215,), 6.0, "ma")
     if i < n - 1:
         fs = fonte("sans_semi", 23)
         escrever(d, (LARGURA - MARGEM, y + 4), "ARRASTE  →", fs, cor + (185,), 3.0, "rm")
