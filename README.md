@@ -12,7 +12,7 @@ com personagem, cenário e roteiro próprios.
 |---|---|
 | `conteudo/plano.json` | O ano inteiro: 730 episódios (365 manhãs e 365 noites), com livro, capítulo e versículos de cada um |
 | `conteudo/biblia/` | Texto de Marcos, João e Salmos (Bíblia Livre) |
-| `conteudo/comentarios/` | Comentários por lote. `lote-001.json` cobre os dias 1 a 14 |
+| `conteudo/comentarios/` | Comentários para os 730 episódios, em 27 lotes. `lote-001.json` cobre os dias 1 a 14; os demais completam os dias 15 a 365 |
 | `estudio/` | Motor de vídeo: personagem (`leitor_lib.py`), cena, voz e composição |
 | `tools/` | `planejar` (gera o plano), `montar_item` (monta um episódio), `piloto` (renderiza um episódio) |
 
@@ -22,7 +22,7 @@ com personagem, cenário e roteiro próprios.
 - **Noite:** Salmos 1 a 116. Salmo curto vai inteiro; salmo longo é dividido.
 - Cada episódio lê de 3 a 7 versículos, em blocos, com um comentário curto depois de cada bloco.
 
-Episódio que ainda não tem comentário escrito sai como leitura pura, então o canal nunca fica sem vídeo.
+Todos os 730 episódios do plano têm comentário escrito, ligado ao trecho bíblico e com explicação ou aplicação para o dia a dia. O montador ainda permite leitura pura como alternativa para um episódio novo que não tenha comentário cadastrado.
 
 ## Como renderizar um episódio
 
@@ -34,7 +34,6 @@ python -m tools.piloto M001
 
 ## O que ainda falta
 
-- Escrever os comentários dos dias 15 a 365 (novos arquivos `lote-00X.json`).
 - Cenário da noite para os Salmos (hoje a noite usa o mesmo cenário da manhã).
 - Capa central com "Dia N · referência" para a grade do Instagram.
 - Fila, publicação e workflows do GitHub Actions (entram quando a conta do Instagram for conectada).
