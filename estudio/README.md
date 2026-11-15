@@ -1,11 +1,4 @@
-# Documentação do motor original (Sábio e Feliz)
-
-> **Canal atual:** Lendo a Bíblia Explicada — **@lendoabibliaexplicada**.
-> Esta página foi herdada do pipeline Sábio e Feliz e contém instruções
-> históricas de Provérbios, nomes antigos de secrets e links do projeto de origem.
-> **Não use os nomes antigos para configurar a conta nova.**
-> Consulte o README da raiz e o arquivo `.env.example` deste repositório
-> antes de conectar ou ativar publicações.
+# Sábio e Feliz · @sabioefeliz
 
 Pipeline automatizado do canal de Provérbios — um Reel de manhã e um carrossel à tarde —, isolado dos outros canais.
 
