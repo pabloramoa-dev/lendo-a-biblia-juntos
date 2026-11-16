@@ -8,7 +8,7 @@ com explicação.
 """
 from __future__ import annotations
 
-HANDLE = "@lendoabibliajuntos"
+HANDLE = "@lendoabibliaexplicada"
 
 
 def convite(item):

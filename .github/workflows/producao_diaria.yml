@@ -1,0 +1,177 @@
+name: Produzir episódios bíblicos
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # 06h em Brasília
+    - cron: '0 21 * * *'  # 18h em Brasília
+  workflow_dispatch:
+    inputs:
+      periodo:
+        description: Período do episódio
+        type: choice
+        options: [automatico, manha, noite]
+        default: automatico
+      modo:
+        description: Rotina avança a sequência; piloto gera uma prévia sem avançar
+        type: choice
+        options: [rotina, piloto]
+        default: rotina
+      episodio:
+        description: ID opcional, somente para piloto (M001 ou N001, por exemplo)
+        type: string
+        default: ''
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/producao_diaria.yml'
+      - 'tools/rotina.py'
+      - 'tests/test_rotina.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lendoabibliaexplicada-producao
+  cancel-in-progress: false
+
+jobs:
+  produzir:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    env:
+      TZ: America/Sao_Paulo
+      PYTHONUNBUFFERED: '1'
+      SABIO_RENDERER: hyperframes
+      SABIO_HF_VISUAL: v2
+      SABIO_HF_WORKERS: '2'
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+      HYPERFRAMES_NO_TELEMETRY: '1'
+      DO_NOT_TRACK: '1'
+      SABIO_ALLOW_PAID_IMAGE_API: '0'
+      PUBLICAR_ATIVO: 'false'
+      DRY_RUN: 'true'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-estudio.txt
+
+      - name: Validar plano e proteção contra repetição
+        run: python -m unittest discover -s tests -p test_rotina.py -v
+
+      - name: Selecionar próximo episódio
+        id: selecionar
+        env:
+          EVENTO: ${{ github.event_name }}
+          PERIODO: ${{ inputs.periodo || 'automatico' }}
+          MODO: ${{ inputs.modo || 'rotina' }}
+          EPISODIO: ${{ inputs.episodio || '' }}
+          CRON: ${{ github.event.schedule || '' }}
+        shell: bash
+        run: |
+          if [ "$EVENTO" = push ]; then
+            # O push testa o motor completo sem consumir um dia da sequência.
+            MODO=piloto
+            PERIODO=noite
+            EPISODIO=N001
+          fi
+          python -m tools.rotina preparar --periodo "$PERIODO" --modo "$MODO" --id "$EPISODIO" --cron "$CRON"
+
+      - uses: actions/setup-node@v7
+        if: steps.selecionar.outputs.produzir == 'true'
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+
+      - name: Instalar dependências do motor de vídeo
+        if: steps.selecionar.outputs.produzir == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg libcairo2-dev libpango1.0-dev pkg-config espeak-ng fontconfig libegl1 libgbm1 libnss3 libasound2t64 libatk-bridge2.0-0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libxkbcommon0
+          python -m pip install -r requirements.txt -r requirements-estudio.txt
+          npm ci --prefix video
+
+      - name: Cache da voz Kokoro
+        if: steps.selecionar.outputs.produzir == 'true'
+        uses: actions/cache@v6
+        with:
+          path: modelos
+          key: kokoro-onnx-model-files-v1.0-${{ runner.os }}
+
+      - name: Preparar navegador de renderização
+        if: steps.selecionar.outputs.produzir == 'true'
+        run: |
+          node video/node_modules/hyperframes/bin/hyperframes.mjs browser ensure
+          browser_path=$(node video/node_modules/hyperframes/bin/hyperframes.mjs browser path | tail -n 1)
+          test -x "$browser_path"
+          echo "HYPERFRAMES_BROWSER_PATH=$browser_path" >> "$GITHUB_ENV"
+          echo "HYPERFRAMES_FFMPEG_PATH=$(command -v ffmpeg)" >> "$GITHUB_ENV"
+          echo "HYPERFRAMES_FFPROBE_PATH=$(command -v ffprobe)" >> "$GITHUB_ENV"
+
+      - name: Renderizar e validar MP4
+        if: steps.selecionar.outputs.produzir == 'true'
+        run: python -m tools.rotina produzir
+
+      - name: Disponibilizar vídeo e legenda
+        id: entrega
+        if: steps.selecionar.outputs.produzir == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ steps.selecionar.outputs.artifact }}
+          path: output/rotina/entrega/
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+
+      - name: Registrar produção concluída
+        if: steps.selecionar.outputs.produzir == 'true'
+        env:
+          ARTIFACT_URL: ${{ steps.entrega.outputs.artifact-url }}
+          ARTIFACT_ID: ${{ steps.entrega.outputs.artifact-id }}
+          EPISODIO: ${{ steps.selecionar.outputs.id }}
+        run: |
+          # Incorpora alterações externas antes de registrar, sem sobrescrevê-las.
+          git pull --ff-only origin main
+          python -m tools.rotina confirmar --artifact-url "$ARTIFACT_URL" --artifact-id "$ARTIFACT_ID"
+          git add conteudo/produzidos.json
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m "Registrar produção bíblica $EPISODIO"
+            git push origin HEAD:main
+          fi
+
+      - name: Resumo da entrega
+        if: steps.selecionar.outputs.produzir == 'true'
+        env:
+          ARTIFACT_URL: ${{ steps.entrega.outputs.artifact-url }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          d = json.loads(Path('output/rotina/entrega/episodio.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write(f"## {d['id']} · {d['referencia']}\n\n")
+              f.write(f"{d['duracao_s']} segundos · {d['resolucao']} · {d['voz']}\n\n")
+              f.write(f"[Baixar MP4, legenda e ficha do episódio]({os.environ['ARTIFACT_URL']})\n\n")
+              f.write('Arquivos disponíveis por 7 dias. Produção de vídeo; não enviado ao Instagram.\n')
+          PY
+
+      - name: Guardar diagnóstico de falha
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: diagnostico-biblia-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            output/rotina/selecionado.json
+            output/rotina/narracao.tempos.json
+            output/rotina/hyperframes/layout-check.json
+            output/rotina/entrega/episodio.json
+          if-no-files-found: ignore
+          retention-days: 3

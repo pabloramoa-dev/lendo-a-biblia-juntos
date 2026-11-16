@@ -450,7 +450,7 @@ def compor(item, dados, pasta: Path):
 <div id="root" data-composition-id="sabio-hf2" data-width="1080" data-height="1920" data-duration="{dur}" data-fps="{FPS}">
 <div id="cam"><video id="base" class="clip" src="assets/base.mp4" data-start="0" data-duration="{dur}" data-track-index="0" muted playsinline></video></div>
 <div id="sunglow"></div><div id="raio"></div>{bokeh}<div class="wash"></div>
-<header><div class="brand"><span class="mini">{SOL_SVG}</span>LENDO A BÍBLIA JUNTOS</div><div class="tag">{e(ref_txt.upper())}</div></header>
+<header><div class="brand"><span class="mini">{SOL_SVG}</span>LENDO A BÍBLIA EXPLICADA</div><div class="tag">{e(ref_txt.upper())}</div></header>
 {''.join(partes)}
 <footer><span>Um trecho de manhã. Um salmo à noite.</span><small>{e(HANDLE)}</small></footer>
 <div id="trilho"><div id="prog"></div><div id="progsol">{SOL_SVG}</div></div>
