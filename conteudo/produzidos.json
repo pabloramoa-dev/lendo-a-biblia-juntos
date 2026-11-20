@@ -154,6 +154,28 @@
       "run_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/44657577774",
       "artifact_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/44657577774/artifacts/14594856210",
       "artifact_id": "14594856210"
+    },
+    {
+      "id": "M005",
+      "periodo": "manha",
+      "data_brt": "2026-11-20",
+      "modo": "rotina",
+      "referencia": "Marcos 1:18-20",
+      "dia": 5,
+      "voz": "pm_alex+im_nicola",
+      "motor": "Manim + HyperFrames",
+      "duracao_s": 47.6,
+      "resolucao": "1080x1920",
+      "fps": "30/1",
+      "tamanho_mb": 30.9,
+      "codec_video": "h264",
+      "codec_audio": "aac",
+      "sha256": "41e0c0febb841b95407fee6c5fd760f39ff09090d873b8011be2bab8d4de29bc",
+      "commit_origem": "3267be979612151931011b3ac25bd5d9180547b5",
+      "gerado_em": "2026-11-20T14:33:46.646869-03:00",
+      "run_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/44783579581",
+      "artifact_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/44783579581/artifacts/14653038654",
+      "artifact_id": "14653038654"
     }
   ]
 }
