@@ -15,7 +15,7 @@ try{
  await page.evaluateOnNewDocument(()=>{window.__timelines={};});
  await page.setViewport({width:1080,height:1920});
  await page.goto(pathToFileURL(resolve(work,'index.html')).href,{waitUntil:'load'});
- await page.evaluate(async()=>{const root=document.querySelector('[data-composition-id]');document.documentElement.style.height=`${root.dataset.height}px`;document.body.style.height=`${root.dataset.height}px`;await document.fonts.ready;await Promise.all([...document.images].map(i=>i.decode()));});
+ await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(i=>i.decode()));});
  const result=await page.evaluate(()=>{
   const root=document.querySelector('[data-composition-id]'),W=+(root?.dataset.width||1080),H=+(root?.dataset.height||1920);
   const clips=[...document.querySelectorAll('.clip')],timelines=Object.values(window.__timelines||{}),errors=[];

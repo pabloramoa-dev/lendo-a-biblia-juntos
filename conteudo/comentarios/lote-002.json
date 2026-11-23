@@ -1,226 +1,818 @@
 {
-  "M015": {
-    "blocos": [
-      {
-        "ate": 17,
-        "comentario": "Jesus compara sua missão à de um médico: acolher quem precisa de mudança. Na prática, aproxime-se sem tratar ninguém como caso perdido."
-      }
-    ]
-  },
-  "N015": {
-    "blocos": [
-      {
-        "ate": 4,
-        "comentario": "Diante da imensidão dos céus, o salmista se admira do cuidado de Deus com as pessoas. Pequenez não significa falta de valor."
-      }
-    ]
-  },
-  "M016": {
-    "blocos": [
-      {
-        "ate": 19,
-        "comentario": "A presença do noivo explica a alegria dos discípulos. O jejum tem sentido, mas a vida com Deus também inclui celebrar."
-      }
-    ]
-  },
-  "N016": {
-    "blocos": [
-      {
-        "ate": 9,
-        "comentario": "A dignidade humana vem acompanhada da responsabilidade pela criação. Cuidar dos animais e do ambiente é diferente de explorar tudo sem limites."
-      }
-    ]
-  },
-  "M017": {
-    "blocos": [
-      {
-        "ate": 22,
-        "comentario": "Os odres mostram que a novidade de Jesus exige abertura. Examine um costume seu que impede uma mudança necessária."
-      }
-    ]
-  },
-  "N017": {
-    "blocos": [
-      {
-        "ate": 5,
-        "comentario": "O louvor nasce da lembrança de uma causa defendida por Deus. Recorde um motivo concreto de gratidão, sem usar a vitória para humilhar alguém."
-      }
-    ]
-  },
-  "M018": {
-    "blocos": [
-      {
-        "ate": 25,
-        "comentario": "Os discípulos têm fome, mas os críticos enxergam apenas uma infração. Antes de julgar uma atitude, procure entender a necessidade envolvida."
-      }
-    ]
-  },
-  "N018": {
-    "blocos": [
-      {
-        "ate": 10,
-        "comentario": "Reinos passam, mas o salmo apresenta Deus como juiz e refúgio. Quem sofre opressão precisa de proteção, não de ser responsabilizado pela própria dor."
-      }
-    ]
-  },
-  "M019": {
-    "blocos": [
-      {
-        "ate": 28,
-        "comentario": "O sábado foi dado para beneficiar as pessoas. Uma prática religiosa perde o sentido quando vira desculpa para ignorar quem precisa."
-      }
-    ]
-  },
-  "N019": {
-    "blocos": [
-      {
-        "ate": 14,
-        "comentario": "O Deus louvado não esquece o clamor dos pobres. Faça sua oração incluir também quem costuma não ter voz ao seu redor."
-      }
-    ]
-  },
-  "M020": {
-    "blocos": [
-      {
-        "ate": 6,
-        "comentario": "Jesus coloca o homem no centro e confronta a indiferença. Fazer o bem exige perceber pessoas, mesmo quando isso incomoda o grupo."
-      }
-    ]
-  },
-  "N020": {
-    "blocos": [
-      {
-        "ate": 20,
-        "comentario": "A rede que prende o próprio autor mostra as consequências da maldade. Entregue a justiça a Deus sem preparar armadilhas para se vingar."
-      }
-    ]
-  },
-  "M021": {
-    "blocos": [
-      {
-        "ate": 12,
-        "comentario": "A multidão procura alívio, e Jesus organiza espaço para atendê-la. Cuidar de muita gente também exige limites e preparo."
-      }
-    ]
-  },
-  "N021": {
-    "blocos": [
-      {
-        "ate": 5,
-        "comentario": "O salmista pergunta por que Deus parece distante diante da injustiça. Você pode levar essa indignação à oração sem fingir que está tudo bem."
-      }
-    ]
-  },
-  "M022": {
-    "blocos": [
-      {
-        "ate": 19,
-        "comentario": "Os doze são chamados primeiro para estar com Jesus, depois para servir. Não deixe tantas tarefas ocuparem o lugar da convivência com ele."
-      }
-    ]
-  },
-  "N022": {
-    "blocos": [
-      {
-        "ate": 9,
-        "comentario": "A arrogância do opressor aparece nas palavras e nas ciladas contra os fracos. Examine se sua maneira de falar protege ou intimida pessoas vulneráveis."
-      }
-    ]
-  },
-  "M023": {
-    "blocos": [
-      {
-        "ate": 25,
-        "comentario": "Jesus responde à acusação mostrando sua incoerência: um reino dividido não permanece. Em casa, troque disputas destrutivas por uma conversa honesta."
-      }
-    ]
-  },
-  "N023": {
-    "blocos": [
-      {
-        "ate": 14,
-        "comentario": "O agressor acha que ninguém vê, mas o salmista afirma que Deus observa a dor. Não seja indiferente a uma injustiça só porque acontece escondida."
-      }
-    ]
-  },
-  "M024": {
-    "blocos": [
-      {
-        "ate": 30,
-        "comentario": "A advertência responde a quem atribuía deliberadamente ao mal a ação do Espírito. Antes de condenar algo, examine com seriedade o que está acontecendo."
-      }
-    ]
-  },
-  "N024": {
-    "blocos": [
-      {
-        "ate": 18,
-        "comentario": "Quebrar o braço representa deter o poder do opressor. A oração pede o fim do terror; não autoriza agir com violência contra alguém."
-      }
-    ]
-  },
-  "M025": {
-    "blocos": [
-      {
-        "ate": 35,
-        "comentario": "Jesus amplia a ideia de família ao redor da vontade de Deus. Acolha na comunidade quem não encontra pertencimento em outros lugares."
-      }
-    ]
-  },
-  "N025": {
-    "blocos": [
-      {
-        "ate": 7,
-        "comentario": "Quando os fundamentos parecem destruídos, o salmista se volta ao Deus justo. Em meio à insegurança, preserve a integridade sem aderir à violência."
-      }
-    ]
-  },
-  "M026": {
-    "blocos": [
-      {
-        "ate": 4,
-        "comentario": "A mesma semente encontra terrenos diferentes. A parábola convida a perguntar como estamos ouvindo, antes de avaliar a escuta dos outros."
-      }
-    ]
-  },
-  "N026": {
-    "blocos": [
-      {
-        "ate": 4,
-        "comentario": "O salmo denuncia elogios falsos e palavras usadas para dominar. Antes de falar algo agradável, pergunte se sua intenção é sincera ou manipuladora."
-      }
-    ]
-  },
-  "M027": {
-    "blocos": [
-      {
-        "ate": 9,
-        "comentario": "Entusiasmo sem raiz e crescimento sufocado não chegam ao fruto. Reserve tempo constante para cultivar o que você diz acreditar."
-      }
-    ]
-  },
-  "N027": {
-    "blocos": [
-      {
-        "ate": 8,
-        "comentario": "À fala enganosa se contrapõe a palavra pura de Deus e seu cuidado pelos oprimidos. Confiança e compromisso com a verdade devem caminhar juntos."
-      }
-    ]
-  },
-  "M028": {
-    "blocos": [
-      {
-        "ate": 12,
-        "comentario": "As parábolas revelam o Reino, mas também expõem a resistência de quem ouve. Quando não entender, aproxime-se e pergunte como os discípulos."
-      }
-    ]
-  },
-  "N028": {
-    "blocos": [
-      {
-        "ate": 6,
-        "comentario": "O mesmo salmo contém a pergunta até quando e a decisão de confiar. A oração não precisa esperar que a tristeza desapareça para começar."
-      }
-    ]
-  }
+ "M015": {
+  "abertura": "Dia quinze. Jesus à mesa com gente malvista. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 16,
+    "comentario": "Fariseus eram um grupo muito religioso, rigoroso com a Lei. Para eles, comer com gente de má fama deixava a pessoa impura."
+   },
+   {
+    "ate": 17,
+    "comentario": "Jesus responde com uma imagem simples: o médico vai até quem está doente. Ele veio justamente para quem sabe que precisa de ajuda."
+   }
+  ],
+  "pergunta": "Você reconhece em que precisa de ajuda?"
+ },
+ "M016": {
+  "abertura": "Dia dezesseis. Uma pergunta sobre jejum. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 18,
+    "comentario": "Jejuar é ficar um tempo sem comer para se dedicar a Deus. Os mais religiosos jejuavam com frequência e estranharam que os discípulos de Jesus não fizessem o mesmo."
+   },
+   {
+    "ate": 19,
+    "comentario": "Jesus compara a presença dele a uma festa de casamento. Ninguém fica de luto com o noivo ali, no meio da festa."
+   }
+  ],
+  "pergunta": "O que faz você perceber que Deus está perto?"
+ },
+ "M017": {
+  "abertura": "Dia dezessete. Pano novo e vinho novo. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 20,
+    "comentario": "O noivo ser tirado é um aviso sobre a morte de Jesus. Haveria um tempo certo para o jejum."
+   },
+   {
+    "ate": 22,
+    "comentario": "Odres eram bolsas de couro para guardar vinho. O vinho novo ainda fermenta e estoura o couro velho. O que Jesus traz não cabe nos moldes antigos."
+   }
+  ],
+  "pergunta": "Que hábito velho precisa dar lugar a algo novo em você?"
+ },
+ "M018": {
+  "abertura": "Dia dezoito. Espigas colhidas no sábado. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 24,
+    "comentario": "O sábado era o dia de descanso, e os fariseus contavam colher espigas como trabalho proibido nesse dia."
+   },
+   {
+    "ate": 25,
+    "comentario": "Jesus responde com uma história que todos conheciam: Davi, com fome, também fez algo fora da regra."
+   }
+  ],
+  "pergunta": "Você já viu alguém cumprir a regra e esquecer a pessoa?"
+ },
+ "M019": {
+  "abertura": "Dia dezenove. Para quem foi feito o sábado. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 26,
+    "comentario": "Os pães da presença ficavam no santuário e eram só para os sacerdotes. Mesmo assim, a fome de Davi e dos seus homens foi atendida."
+   },
+   {
+    "ate": 28,
+    "comentario": "O descanso foi um presente de Deus para o ser humano, não um peso. E Jesus se apresenta como Senhor até do sábado."
+   }
+  ],
+  "pergunta": "O seu descanso tem sido presente ou peso?"
+ },
+ "M020": {
+  "abertura": "Dia vinte. Uma mão curada no sábado. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 2,
+    "comentario": "Agora estão vigiando Jesus de propósito. Querem um motivo para acusá-lo."
+   },
+   {
+    "ate": 4,
+    "comentario": "Jesus coloca o homem no meio de todos e faz uma pergunta que não deixa saída. Eles preferem ficar calados."
+   },
+   {
+    "ate": 6,
+    "comentario": "Jesus se entristece com a dureza do coração deles e cura o homem. Herodianos eram aliados do rei Herodes: grupos rivais se unem contra Jesus."
+   }
+  ],
+  "pergunta": "Diante do bem que precisa ser feito, você costuma agir ou calar?"
+ },
+ "M021": {
+  "abertura": "Dia vinte e um. Gente de todo lado procura Jesus. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 8,
+    "comentario": "A Idumeia ficava ao sul; Tiro e Sidom, ao norte, já fora de Israel. A fama de Jesus passava das fronteiras."
+   },
+   {
+    "ate": 10,
+    "comentario": "Era tanta gente que ele pede um barco pronto, para não ser esmagado. Os doentes queriam ao menos tocar nele."
+   },
+   {
+    "ate": 12,
+    "comentario": "Os espíritos maus sabem quem ele é. Mas Jesus não quer ser anunciado por eles."
+   }
+  ],
+  "pergunta": "O que você buscaria se pudesse tocar em Jesus?"
+ },
+ "M022": {
+  "abertura": "Dia vinte e dois. Jesus escolhe os doze. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 15,
+    "comentario": "Repare na ordem: primeiro, estar com ele. Só depois, ir pregar e curar."
+   },
+   {
+    "ate": 19,
+    "comentario": "São pessoas bem diferentes: pescadores, um cobrador de impostos, um zelote, que era de um grupo contra os romanos. E até quem o trairia estava na lista."
+   }
+  ],
+  "pergunta": "Você tem reservado tempo só para estar com ele?"
+ },
+ "M023": {
+  "abertura": "Dia vinte e três. Acusam Jesus de estar do lado do mal. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 21,
+    "comentario": "A agitação era tanta que nem dava para comer. A própria família achou que ele tinha perdido o juízo."
+   },
+   {
+    "ate": 22,
+    "comentario": "Os escribas vindos de Jerusalém vão além: dizem que o poder dele vem de Belzebu, nome dado ao chefe dos demônios."
+   },
+   {
+    "ate": 25,
+    "comentario": "Jesus mostra que a acusação não faz sentido. Um reino ou uma casa dividida contra si mesma não fica de pé."
+   }
+  ],
+  "pergunta": "Já julgaram mal alguma coisa boa que você fez?"
+ },
+ "M024": {
+  "abertura": "Dia vinte e quatro. O homem forte é amarrado. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 27,
+    "comentario": "Na imagem de Jesus, o homem forte é Satanás. Se Jesus liberta as pessoas, é porque é mais forte do que ele."
+   },
+   {
+    "ate": 30,
+    "comentario": "Blasfemar contra o Espírito Santo, aqui, é chamar de obra do mal aquilo que é obra de Deus, como fizeram os escribas. Quem se fecha assim para Deus se fecha também ao perdão."
+   }
+  ],
+  "pergunta": "Você reconhece a mão de Deus quando ela age perto de você?"
+ },
+ "M025": {
+  "abertura": "Dia vinte e cinco. Quem é a família de Jesus. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 32,
+    "comentario": "A família de Jesus chega e fica do lado de fora, mandando chamá-lo."
+   },
+   {
+    "ate": 35,
+    "comentario": "Jesus não está rejeitando a família. Ele amplia o círculo: quem faz a vontade de Deus é tão próximo dele quanto mãe e irmãos."
+   }
+  ],
+  "pergunta": "Quem faz parte da sua família na fé?"
+ },
+ "M026": {
+  "abertura": "Dia vinte e seis. Começa a parábola do semeador. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 2,
+    "comentario": "Parábola é uma história curta, tirada do dia a dia, que ensina uma verdade. Jesus fala de dentro do barco, e a água ajuda a voz a chegar na multidão."
+   },
+   {
+    "ate": 4,
+    "comentario": "Naquele tempo, a semente era jogada com a mão, espalhada pelo campo. Uma parte caía no caminho de terra batida, e os pássaros comiam."
+   }
+  ],
+  "pergunta": "Que tipo de terreno você tem sido esta semana?"
+ },
+ "M027": {
+  "abertura": "Dia vinte e sete. A semente cai em lugares diferentes. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 6,
+    "comentario": "Na terra cheia de pedras, a planta nasce rápido, mas sem raiz não aguenta o sol."
+   },
+   {
+    "ate": 7,
+    "comentario": "Entre os espinhos, ela até cresce, mas é sufocada e não dá fruto."
+   },
+   {
+    "ate": 9,
+    "comentario": "Na terra boa, a colheita é farta: trinta, sessenta e até cem vezes mais. Jesus termina pedindo atenção: quem tem ouvidos, ouça."
+   }
+  ],
+  "pergunta": "Em que parte da sua vida a semente está sem raiz?"
+ },
+ "M028": {
+  "abertura": "Dia vinte e oito. Por que Jesus fala em parábolas. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 10,
+    "comentario": "Os discípulos não entenderam e foram perguntar em particular. Perguntar também é um jeito de ouvir."
+   },
+   {
+    "ate": 12,
+    "comentario": "Jesus cita o profeta Isaías. A parábola se abre para quem se aproxima querendo entender e fica fechada para quem só observa de longe."
+   }
+  ],
+  "pergunta": "Você tem levado as suas dúvidas a Deus?"
+ },
+ "M029": {
+  "abertura": "Dia vinte e nove. Jesus explica a parábola. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 14,
+    "comentario": "A semente é a palavra de Deus. O semeador é quem a anuncia."
+   },
+   {
+    "ate": 15,
+    "comentario": "O caminho é o coração que ouve, mas não deixa entrar. A palavra fica por fora e é levada logo."
+   },
+   {
+    "ate": 16,
+    "comentario": "A terra com pedras é quem recebe a palavra com alegria e entusiasmo. Amanhã a gente vê o que acontece com essa alegria."
+   }
+  ],
+  "pergunta": "Hoje, a palavra de Deus encontrou espaço em você?"
+ },
+ "M030": {
+  "abertura": "Dia trinta. O que sufoca a palavra. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 17,
+    "comentario": "Na terra com pedras falta raiz. Quando vem a dificuldade, a pessoa desiste."
+   },
+   {
+    "ate": 19,
+    "comentario": "Os espinhos são as preocupações, o dinheiro e a vontade de ter sempre mais. Eles crescem junto e tomam o espaço."
+   },
+   {
+    "ate": 20,
+    "comentario": "A terra boa ouve, recebe e dá fruto. Cada um numa medida, mas todos dão."
+   }
+  ],
+  "pergunta": "Qual espinho tem disputado espaço com Deus em você?"
+ },
+ "M031": {
+  "abertura": "Dia trinta e um. A lâmpada não fica escondida. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 23,
+    "comentario": "Ninguém acende uma lamparina para pôr debaixo da cama. O que Jesus ensina é para ser visto e vivido."
+   },
+   {
+    "ate": 25,
+    "comentario": "A medida é o tamanho da atenção. Quem ouve com o coração aberto recebe ainda mais."
+   }
+  ],
+  "pergunta": "Onde a sua luz tem ficado escondida?"
+ },
+ "M032": {
+  "abertura": "Dia trinta e dois. A semente cresce sozinha. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 27,
+    "comentario": "O agricultor planta e vai dormir. Dia e noite a semente cresce, e ele nem sabe explicar como."
+   },
+   {
+    "ate": 29,
+    "comentario": "Primeiro a folha, depois a espiga, depois o grão. O Reino de Deus cresce assim: aos poucos, no tempo certo, e não depende só da nossa força."
+   }
+  ],
+  "pergunta": "O que você plantou e precisa esperar crescer?"
+ },
+ "M033": {
+  "abertura": "Dia trinta e três. A menor das sementes. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 32,
+    "comentario": "A semente de mostarda é minúscula, mas vira uma planta grande, onde os passarinhos fazem ninho. O Reino começa pequeno e vai longe."
+   },
+   {
+    "ate": 34,
+    "comentario": "Jesus ensinava na medida em que o povo conseguia entender. E aos discípulos explicava tudo em particular."
+   }
+  ],
+  "pergunta": "Que começo pequeno você anda desprezando?"
+ },
+ "M034": {
+  "abertura": "Dia trinta e quatro. Uma travessia no fim da tarde. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 36,
+    "comentario": "Depois de um dia inteiro ensinando, Jesus pede para atravessar. O mar da Galileia é um lago grande, cercado de montes."
+   },
+   {
+    "ate": 37,
+    "comentario": "O vento desce dos montes de repente e agita a água. Até pescadores experientes ficavam em perigo."
+   }
+  ],
+  "pergunta": "Qual tempestade apareceu na sua travessia?"
+ },
+ "M035": {
+  "abertura": "Dia trinta e cinco. Jesus acalma o mar. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 38,
+    "comentario": "Popa é a parte de trás do barco. Jesus dorme tranquilo, e os discípulos acham que ele não se importa."
+   },
+   {
+    "ate": 39,
+    "comentario": "Duas palavras bastam, e o vento e o mar se aquietam. Bonança é a calma depois da tempestade."
+   },
+   {
+    "ate": 41,
+    "comentario": "Jesus pergunta pela fé deles. E o medo muda de motivo: agora eles se perguntam quem é aquele homem."
+   }
+  ],
+  "pergunta": "Você já achou que Jesus dormia enquanto você afundava?"
+ },
+ "M036": {
+  "abertura": "Dia trinta e seis. Do outro lado do mar, um homem acorrentado. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 2,
+    "comentario": "Os gadarenos moravam do outro lado do lago, numa região de maioria não judia. Assim que Jesus desce do barco, vem ao encontro dele um homem dominado por um espírito mau."
+   },
+   {
+    "ate": 5,
+    "comentario": "Ele vivia entre os túmulos, ninguém conseguia contê-lo, e ele se feria com pedras. É o retrato de alguém completamente sozinho e destruído."
+   }
+  ],
+  "pergunta": "Quem você conhece que vive isolado e precisa de ajuda?"
+ },
+ "M037": {
+  "abertura": "Dia trinta e sete. Meu nome é Legião. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 8,
+    "comentario": "O homem corre até Jesus e se ajoelha. O espírito sabe quem ele é e tem medo."
+   },
+   {
+    "ate": 10,
+    "comentario": "Legião era um batalhão do exército romano, com milhares de soldados. O nome mostra o tamanho do mal que dominava aquele homem."
+   },
+   {
+    "ate": 11,
+    "comentario": "Ali perto havia uma manada de porcos. Para os judeus, o porco era um animal impuro."
+   }
+  ],
+  "pergunta": "Por maior que seja o problema, você acredita que Jesus é maior?"
+ },
+ "M038": {
+  "abertura": "Dia trinta e oito. O homem fica livre. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 13,
+    "comentario": "Jesus permite, e a manada se lança no mar. Dois mil porcos mostram o tamanho do mal que saiu daquele homem."
+   },
+   {
+    "ate": 15,
+    "comentario": "O povo vem ver e encontra o homem sentado, vestido e em perfeito juízo. E, em vez de alegria, sente medo."
+   }
+  ],
+  "pergunta": "O que mudaria se as pessoas vissem você em paz?"
+ },
+ "M039": {
+  "abertura": "Dia trinta e nove. Vai e conta aos teus. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 17,
+    "comentario": "O povo pede que Jesus vá embora. Pesou mais o prejuízo com os porcos do que a vida de um homem restaurada."
+   },
+   {
+    "ate": 18,
+    "comentario": "O homem quer ir com Jesus, mas recebe outra missão: voltar para casa e contar o que Deus fez."
+   },
+   {
+    "ate": 20,
+    "comentario": "Decápolis era uma região de dez cidades gregas. O homem que vivia entre túmulos vira o primeiro a anunciar Jesus ali."
+   }
+  ],
+  "pergunta": "Para quem da sua casa você poderia contar o que Deus já fez?"
+ },
+ "M040": {
+  "abertura": "Dia quarenta. Um pai desesperado. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 22,
+    "comentario": "De volta ao outro lado do lago, aparece Jairo, um dos responsáveis pela sinagoga. Um homem importante, que se joga aos pés de Jesus."
+   },
+   {
+    "ate": 24,
+    "comentario": "A filha dele estava morrendo. Jesus vai com ele, no meio de uma multidão que aperta de todos os lados."
+   }
+  ],
+  "pergunta": "Por quem você se colocaria aos pés de Jesus hoje?"
+ },
+ "N015": {
+  "abertura": "Boa noite. O Salmo oito olha para o céu estrelado. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 2,
+    "comentario": "O salmo começa e termina com a mesma frase: como é grande o nome de Deus. E diz que até a voz das crianças tem força contra o inimigo."
+   },
+   {
+    "ate": 4,
+    "comentario": "Diante da lua e das estrelas, o ser humano se sente pequeno. E se espanta: mesmo assim, Deus se lembra de nós."
+   }
+  ],
+  "pergunta": "Quando foi a última vez que você parou para olhar o céu?"
+ },
+ "N016": {
+  "abertura": "Boa noite. Seguimos no Salmo oito. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 5,
+    "comentario": "Seres divinos, aqui, são os anjos. O ser humano é pequeno diante do universo, mas recebeu de Deus uma honra enorme."
+   },
+   {
+    "ate": 8,
+    "comentario": "Deus confiou a criação aos cuidados do ser humano: os animais, as aves e os peixes."
+   },
+   {
+    "ate": 9,
+    "comentario": "O salmo volta à frase do começo. Tudo termina em louvor."
+   }
+  ],
+  "pergunta": "Como você tem cuidado do que Deus colocou nas suas mãos?"
+ },
+ "N017": {
+  "abertura": "Boa noite. O Salmo nove começa em gratidão. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 2,
+    "comentario": "Davi louva de coração inteiro e quer contar o que Deus fez. É gratidão que vira testemunho."
+   },
+   {
+    "ate": 5,
+    "comentario": "Ele lembra vitórias passadas: Deus defendeu a causa dele como um juiz justo."
+   }
+  ],
+  "pergunta": "Que maravilha de Deus você contaria hoje?"
+ },
+ "N018": {
+  "abertura": "Boa noite. Deus reina para sempre. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 6,
+    "comentario": "Os inimigos que pareciam fortes acabaram, e até a lembrança deles sumiu."
+   },
+   {
+    "ate": 8,
+    "comentario": "Impérios passam, mas Deus continua no trono, julgando com justiça."
+   },
+   {
+    "ate": 10,
+    "comentario": "Alto refúgio era um lugar seguro, no alto, onde o inimigo não alcança. É isso que Deus é para o oprimido. E ele não abandona quem o procura."
+   }
+  ],
+  "pergunta": "Em que angústia você precisa de um refúgio esta noite?"
+ },
+ "N019": {
+  "abertura": "Boa noite. Deus não esquece quem sofre. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 12,
+    "comentario": "Sião é Jerusalém. Deus não se esquece do grito de quem sofre injustiça."
+   },
+   {
+    "ate": 14,
+    "comentario": "Portas da morte quer dizer estar à beira da morte. Davi pede para ser levantado dali e voltar a louvar no meio do povo."
+   }
+  ],
+  "pergunta": "Qual clamor seu você acha que Deus esqueceu?"
+ },
+ "N020": {
+  "abertura": "Boa noite. Hoje, o final do Salmo nove. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 16,
+    "comentario": "Quem arma a armadilha acaba preso nela. A justiça de Deus aparece quando o mal se volta contra quem o fez."
+   },
+   {
+    "ate": 18,
+    "comentario": "Xeol é o lugar dos mortos. E vem uma promessa: o necessitado não será esquecido para sempre."
+   },
+   {
+    "ate": 20,
+    "comentario": "O salmo termina lembrando que as nações, por mais fortes que sejam, são feitas de simples seres humanos."
+   }
+  ],
+  "pergunta": "Que esperança você tem guardado, mesmo sem ver resultado?"
+ },
+ "N021": {
+  "abertura": "Boa noite. O Salmo dez começa com uma pergunta difícil. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 1,
+    "comentario": "Por que Deus parece longe justamente na hora da angústia? A Bíblia não tem medo dessa pergunta."
+   },
+   {
+    "ate": 4,
+    "comentario": "O salmo descreve o arrogante: persegue o fraco e vive como se Deus não existisse."
+   },
+   {
+    "ate": 5,
+    "comentario": "E o pior: a vida dele parece dar certo. É isso que incomoda quem ora."
+   }
+  ],
+  "pergunta": "Você já sentiu que Deus estava longe?"
+ },
+ "N022": {
+  "abertura": "Boa noite. O Salmo dez descreve o opressor. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 7,
+    "comentario": "Ele se acha inabalável e usa a boca para enganar e oprimir."
+   },
+   {
+    "ate": 9,
+    "comentario": "O salmo compara o opressor a um leão de tocaia e a um caçador com rede. A vítima é sempre o pobre e o indefeso."
+   }
+  ],
+  "pergunta": "Onde você vê o fraco sendo explorado hoje?"
+ },
+ "N023": {
+  "abertura": "Boa noite. Levanta-te, Senhor. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 11,
+    "comentario": "O opressor acha que Deus se esqueceu e não vê nada."
+   },
+   {
+    "ate": 13,
+    "comentario": "Aqui a oração vira um pedido forte: levanta-te, não te esqueças dos que sofrem."
+   },
+   {
+    "ate": 14,
+    "comentario": "A resposta é firme: Deus está vendo, sim. Adjudador é quem defende uma causa. Deus defende o órfão, quem não tem ninguém."
+   }
+  ],
+  "pergunta": "O que você precisa lembrar que Deus está vendo?"
+ },
+ "N024": {
+  "abertura": "Boa noite. O final do Salmo dez. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 15,
+    "comentario": "Quebrar o braço quer dizer tirar a força de quem faz o mal. O salmista pede que o mal acabe de vez."
+   },
+   {
+    "ate": 18,
+    "comentario": "Deus é rei para sempre e ouve os mansos, os humildes. Ele faz justiça ao órfão e ao oprimido."
+   }
+  ],
+  "pergunta": "Você tem confiado a sua causa ao Rei que ouve?"
+ },
+ "N025": {
+  "abertura": "Boa noite. O Salmo onze responde ao conselho de fugir. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 3,
+    "comentario": "Os amigos aconselham: foge para a montanha. Se tudo está desmoronando, o que o justo pode fazer?"
+   },
+   {
+    "ate": 5,
+    "comentario": "Davi olha para cima: Deus continua no trono e enxerga tudo."
+   },
+   {
+    "ate": 7,
+    "comentario": "O cálice é a parte que cabe a cada um. Os maus colhem o mal que plantaram, e os corretos verão o rosto de Deus."
+   }
+  ],
+  "pergunta": "Diante do medo, você costuma fugir ou confiar?"
+ },
+ "N026": {
+  "abertura": "Boa noite. O Salmo doze fala de palavras. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 2,
+    "comentario": "Davi se sente cercado de gente falsa, que fala bonito com o coração fingido."
+   },
+   {
+    "ate": 4,
+    "comentario": "Lábios bajuladores elogiam para enganar. E o arrogante acha que a própria língua não deve satisfação a ninguém."
+   }
+  ],
+  "pergunta": "As suas palavras têm combinado com o seu coração?"
+ },
+ "N027": {
+  "abertura": "Boa noite. A palavra que não falha. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 5,
+    "comentario": "Agora quem fala é Deus. Ele se levanta pelo pobre e por quem geme."
+   },
+   {
+    "ate": 6,
+    "comentario": "A prata era derretida várias vezes para tirar as impurezas. Sete vezes quer dizer completamente pura. Assim é a palavra de Deus."
+   },
+   {
+    "ate": 8,
+    "comentario": "Mesmo com o mal à solta, Deus guarda os seus."
+   }
+  ],
+  "pergunta": "Em que promessa de Deus você pode descansar hoje?"
+ },
+ "N028": {
+  "abertura": "Boa noite. O Salmo treze pergunta: até quando? Leia comigo.",
+  "blocos": [
+   {
+    "ate": 2,
+    "comentario": "Quatro vezes Davi pergunta: até quando? É o cansaço de quem espera há muito tempo."
+   },
+   {
+    "ate": 4,
+    "comentario": "Ilumina meus olhos é um pedido de vida e de força. Ele não quer que o inimigo comemore a sua queda."
+   },
+   {
+    "ate": 6,
+    "comentario": "E então vem a virada: mas eu confio. A situação ainda não mudou, mas o coração já canta."
+   }
+  ],
+  "pergunta": "Qual é o seu até quando hoje?"
+ },
+ "N029": {
+  "abertura": "Boa noite. O Salmo catorze fala do tolo. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 1,
+    "comentario": "Na Bíblia, tolo não é quem tem pouca inteligência. É quem vive como se Deus não existisse."
+   },
+   {
+    "ate": 3,
+    "comentario": "Deus olha do céu procurando quem o busque. O salmo é duro: todos se desviaram. Ninguém pode se achar melhor do que os outros."
+   }
+  ],
+  "pergunta": "Em que área você tem vivido como se Deus não visse?"
+ },
+ "N030": {
+  "abertura": "Boa noite. Deus é o refúgio do pobre. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 6,
+    "comentario": "Os que exploram o povo vão tremer, porque Deus está do lado dos justos. Ele é o refúgio dos pobres."
+   },
+   {
+    "ate": 7,
+    "comentario": "O salmo termina com um desejo de salvação. Jacó e Israel são nomes do mesmo povo de Deus."
+   }
+  ],
+  "pergunta": "De quem você pode ser refúgio esta semana?"
+ },
+ "N031": {
+  "abertura": "Boa noite. O Salmo quinze pergunta quem pode chegar perto de Deus. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 1,
+    "comentario": "A tenda e o santo monte são o lugar da presença de Deus. A pergunta é: quem pode morar ali?"
+   },
+   {
+    "ate": 3,
+    "comentario": "A resposta não fala de ritual. Fala de vida: andar com sinceridade, falar a verdade e não falar mal dos outros."
+   },
+   {
+    "ate": 5,
+    "comentario": "Cumprir a palavra mesmo com prejuízo, não explorar o próximo e não aceitar suborno. Quem vive assim fica firme."
+   }
+  ],
+  "pergunta": "Qual dessas atitudes você mais precisa praticar?"
+ },
+ "N032": {
+  "abertura": "Boa noite. O Salmo dezesseis é uma oração de confiança. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 2,
+    "comentario": "Davi diz a Deus: tu és o meu bem maior. Não há nada melhor além de ti."
+   },
+   {
+    "ate": 4,
+    "comentario": "Os santos são o povo fiel de Deus, e é com eles que Davi gosta de estar. Ele se recusa a seguir outros deuses."
+   },
+   {
+    "ate": 5,
+    "comentario": "Porção e cálice falam da parte que cabe a cada um. A parte de Davi é o próprio Deus."
+   }
+  ],
+  "pergunta": "O que tem sido o seu maior bem?"
+ },
+ "N033": {
+  "abertura": "Boa noite. O final do Salmo dezesseis. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 6,
+    "comentario": "Demarcações eram os limites de um terreno recebido de herança. Davi está feliz com o lugar que Deus lhe deu."
+   },
+   {
+    "ate": 8,
+    "comentario": "Até de noite o coração aprende com Deus. Com Deus ao seu lado, ele não se abala."
+   },
+   {
+    "ate": 11,
+    "comentario": "Os apóstolos leram estes versos como uma promessa cumprida na ressurreição de Jesus. O salmo termina na alegria da presença de Deus."
+   }
+  ],
+  "pergunta": "O que você aprendeu com Deus hoje?"
+ },
+ "N034": {
+  "abertura": "Boa noite. O Salmo dezessete é a oração de alguém injustiçado. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 2,
+    "comentario": "Davi pede que o próprio Deus julgue a causa dele. É uma oração sincera, sem fingimento."
+   },
+   {
+    "ate": 4,
+    "comentario": "Deus examinou o coração dele até de noite. Davi decidiu guardar a boca e se afastar da violência."
+   }
+  ],
+  "pergunta": "Você deixaria Deus examinar o seu coração esta noite?"
+ },
+ "N035": {
+  "abertura": "Boa noite. Guarda-me como a pupila do olho. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 6,
+    "comentario": "Davi pede firmeza nos passos e confia que Deus responde."
+   },
+   {
+    "ate": 9,
+    "comentario": "A pupila é a parte do olho que protegemos por reflexo. E a sombra das asas lembra a ave que esconde os filhotes. É assim que Davi quer ser guardado."
+   }
+  ],
+  "pergunta": "Do que você precisa ser guardado hoje?"
+ },
+ "N036": {
+  "abertura": "Boa noite. O final do Salmo dezessete. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 12,
+    "comentario": "Os inimigos são comparados a um leão escondido, esperando a presa."
+   },
+   {
+    "ate": 14,
+    "comentario": "Davi pede livramento de quem só vive para as coisas desta vida."
+   },
+   {
+    "ate": 15,
+    "comentario": "O salmo termina numa esperança maior: ao despertar, ver o rosto de Deus e ficar satisfeito."
+   }
+  ],
+  "pergunta": "O que satisfaz de verdade o seu coração?"
+ },
+ "N037": {
+  "abertura": "Boa noite. O Salmo dezoito começa com uma declaração de amor. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 3,
+    "comentario": "Davi junta várias imagens de proteção: rocha, fortaleza, escudo. Deus é tudo isso para ele."
+   },
+   {
+    "ate": 6,
+    "comentario": "Cordas da morte é estar cercado de perigo mortal. Na angústia, Davi clama, e Deus ouve."
+   }
+  ],
+  "pergunta": "Que nome você daria ao que Deus é para você?"
+ },
+ "N038": {
+  "abertura": "Boa noite. Deus vem em socorro. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 9,
+    "comentario": "Davi descreve a resposta de Deus como um terremoto e uma tempestade. São imagens fortes para dizer: Deus se moveu por ele."
+   },
+   {
+    "ate": 11,
+    "comentario": "Querubim é um ser celestial. Deus aparece voando sobre o vento, escondido nas nuvens escuras."
+   }
+  ],
+  "pergunta": "Você acredita que Deus se move quando você clama?"
+ },
+ "N039": {
+  "abertura": "Boa noite. Tirado das muitas águas. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 14,
+    "comentario": "Trovão, granizo e raios: é a linguagem poética da força de Deus contra o inimigo."
+   },
+   {
+    "ate": 15,
+    "comentario": "Até o fundo do mar fica exposto. Nada resiste ao sopro de Deus."
+   },
+   {
+    "ate": 16,
+    "comentario": "E, depois de toda essa força, um gesto pessoal: Deus estende a mão e tira Davi das águas profundas."
+   }
+  ],
+  "pergunta": "De que águas profundas Deus já tirou você?"
+ },
+ "N040": {
+  "abertura": "Boa noite. Um lugar espaçoso. Leia comigo.",
+  "blocos": [
+   {
+    "ate": 19,
+    "comentario": "Os inimigos eram mais fortes, mas Deus foi o apoio de Davi e o levou para um lugar amplo, onde ele podia respirar."
+   },
+   {
+    "ate": 22,
+    "comentario": "Davi fala da própria fidelidade. Não é orgulho: é a lembrança de que procurou andar nos caminhos de Deus."
+   }
+  ],
+  "pergunta": "Qual foi o seu lugar espaçoso depois de um aperto?"
+ }
 }

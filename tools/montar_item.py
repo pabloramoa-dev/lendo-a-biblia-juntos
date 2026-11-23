@@ -1,8 +1,8 @@
 """Monta o item de um episódio a partir do plano, do texto bíblico e dos comentários.
 
 Uso: python -m tools.montar_item M001        (imprime o item)
-Episódio ainda sem comentário escrito sai como leitura pura: o canal nunca
-fica sem vídeo.
+Regra do canal: todo episódio é comentado. Episódio sem comentário escrito
+não é montado (SemComentario), e a fila não o publica.
 """
 import json, sys
 from pathlib import Path
@@ -26,6 +26,14 @@ def por_extenso(n: int) -> str:
     return CEN[c] + (f" e {por_extenso(r)}" if r else "")
 
 
+class SemComentario(Exception):
+    pass
+
+
+def pronto(ep_id: str) -> bool:
+    return ep_id in comentarios()
+
+
 def _json(p):
     return json.loads(Path(p).read_text(encoding="utf-8"))
 
@@ -46,7 +54,10 @@ def montar(ep_id: str) -> dict:
     biblia = _json(CONT / "biblia" / f"{e['slug']}.json")
     cap = biblia["capitulos"][str(e["capitulo"])]
     versos = [{"n": n, "texto": cap[str(n)]} for n in range(e["v_ini"], e["v_fim"] + 1) if str(n) in cap]
-    com = comentarios().get(ep_id, {})
+    com = comentarios().get(ep_id)
+    if not com:
+        # regra do canal: todo episódio é comentado; sem comentário, não sai
+        raise SemComentario(f"{ep_id} ({e['ref']}) ainda não tem comentário escrito")
     salmo = e["slug"] == "salmos"
     nome = "Salmo" if salmo else e["livro"]
 
@@ -56,8 +67,7 @@ def montar(ep_id: str) -> dict:
         assert fim > inicio, f"{ep_id}: bloco 'ate {b['ate']}' fora de ordem"
         blocos.append({"versiculos": versos[inicio:fim], "comentario": b["comentario"]})
         inicio = fim
-    if inicio < len(versos):
-        blocos.append({"versiculos": versos[inicio:], "comentario": ""})
+    assert inicio == len(versos), f"{ep_id}: o último bloco não chega ao versículo {versos[-1]['n']}"
 
     if salmo:
         abertura = f"Boa noite. Salmo {por_extenso(e['capitulo'])}. Leia comigo."
@@ -71,7 +81,7 @@ def montar(ep_id: str) -> dict:
         "titulo": f"Dia {e['dia']} · {e['ref']}", "referencia_exibida": e["ref"],
         "abertura": com.get("abertura", abertura), "blocos": blocos,
         "pergunta": com.get("pergunta", ""), "cta": com.get("cta", cta),
-        "comentado": bool(com), "credito": "Bíblia Livre (BLIVRE)",
+        "comentado": True, "credito": "Bíblia Livre (BLIVRE)",
     }
 
 

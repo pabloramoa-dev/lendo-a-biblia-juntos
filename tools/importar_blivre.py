@@ -13,7 +13,7 @@ LICENCA = "Creative Commons Atribuição 3.0 Brasil (CC BY 3.0 BR)"
 
 def limpar(t):
     t = re.sub(r"\\(fn|ref|psalm-title)\b.*?\\\*\1", " ", t, flags=re.S)   # notas, referências, títulos
-    t = t.replace("(Selá)", " ")                                    # marca musical, não é lida
+    t = re.sub(r"\((?:Higaiom,?\s*)?Selá\)", " ", t)              # marcas musicais, não são lidas
     t = re.sub(r"\\\*?[\w-]+", " ", t)                              # qualquer marca restante
     t = t.replace("{", "").replace("}", "")
     t = " ".join(t.split())
