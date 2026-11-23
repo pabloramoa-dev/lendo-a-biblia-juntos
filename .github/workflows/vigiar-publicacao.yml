@@ -1,0 +1,100 @@
+name: Vigiar producao e publicacao da Biblia
+
+on:
+  schedule:
+    - cron: '40 10 * * *'  # 07h40 Brasilia
+    - cron: '40 11 * * *'  # 08h40 Brasilia
+    - cron: '40 0 * * *'   # 21h40 Brasilia
+    - cron: '40 1 * * *'   # 22h40 Brasilia
+  workflow_dispatch:
+    inputs:
+      periodo:
+        type: choice
+        description: Periodo a recuperar
+        options: [manha, noite]
+        default: manha
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: lendoabibliaexplicada-vigia
+  cancel-in-progress: false
+
+jobs:
+  vigiar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      TZ: America/Sao_Paulo
+      PUBLICAR_ATIVO: ${{ vars.PUBLICAR_ATIVO }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Recuperar producao ou publicacao pendente
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          CRON: ${{ github.event.schedule }}
+          ESCOLHA: ${{ inputs.periodo }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          from datetime import datetime
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          horarios = {
+              '40 10 * * *': 'manha',
+              '40 11 * * *': 'manha',
+              '40 0 * * *': 'noite',
+              '40 1 * * *': 'noite',
+          }
+          periodo = os.getenv('ESCOLHA') if os.getenv('GITHUB_EVENT_NAME') == 'workflow_dispatch' else horarios.get(os.getenv('CRON'))
+          if periodo not in ('manha', 'noite'):
+              raise SystemExit('Periodo do vigia nao identificado')
+          agora = datetime.now(ZoneInfo('America/Sao_Paulo'))
+          if os.getenv('GITHUB_EVENT_NAME') == 'schedule':
+              if (periodo == 'manha' and agora.hour < 6) or (periodo == 'noite' and agora.hour < 19):
+                  print('Agendamento atrasado para horario inadequado; sem acionamento.')
+                  raise SystemExit(0)
+          hoje = agora.date().isoformat()
+          if os.getenv('PUBLICAR_ATIVO', '').lower() != 'true':
+              raise SystemExit('PUBLICAR_ATIVO desativado: postagem automatica bloqueada.')
+
+          def ler_registros(arquivo):
+              return json.loads(Path(arquivo).read_text(encoding='utf-8'))['registros']
+
+          def em_andamento(arquivo):
+              p = subprocess.run(
+                  ['gh', 'run', 'list', '--repo', os.environ['GH_REPO'], '--workflow', arquivo, '--limit', '10', '--json', 'status'],
+                  check=True, capture_output=True, text=True)
+              return any(x['status'] in ('queued', 'in_progress', 'waiting', 'requested', 'pending') for x in json.loads(p.stdout))
+
+          produzidos = [r for r in ler_registros('conteudo/produzidos.json')
+                        if r.get('data_brt') == hoje and r.get('periodo') == periodo and r.get('modo') == 'rotina' and r.get('artifact_id')]
+          publicados = {r['id'] for r in ler_registros('conteudo/publicados_instagram.json')}
+          if not produzidos:
+              if em_andamento('producao_diaria.yml'):
+                  mensagem = f'Producao {periodo} ainda em andamento; aguardando proxima verificacao.'
+              else:
+                  subprocess.run(['gh', 'workflow', 'run', 'producao_diaria.yml', '--repo', os.environ['GH_REPO'],
+                                  '--ref', 'main', '-f', f'periodo={periodo}', '-f', 'modo=rotina'], check=True)
+                  mensagem = f'Producao {periodo} ausente de {hoje}; recuperacao acionada.'
+          elif produzidos[-1]['id'] not in publicados:
+              if em_andamento('publicar-diario.yml'):
+                  mensagem = f'Publicacao {periodo} em andamento; aguardando proxima verificacao.'
+              else:
+                  subprocess.run(['gh', 'workflow', 'run', 'publicar-diario.yml', '--repo', os.environ['GH_REPO'],
+                                  '--ref', 'main', '-f', f'periodo={periodo}'], check=True)
+                  mensagem = f"Episodio {produzidos[-1]['id']} produzido, mas sem registro de publicacao; recuperacao acionada."
+          else:
+              mensagem = f"Episodio {produzidos[-1]['id']} de {hoje} publicado e registrado."
+          print(mensagem)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as f:
+              f.write('## Vigia do canal biblico\n\n' + mensagem + '\n')
+          PY
