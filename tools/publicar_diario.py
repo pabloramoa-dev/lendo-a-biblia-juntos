@@ -37,10 +37,13 @@ def _saida(**valores):
     print("\n".join(linhas))
 
 
-def selecionar(periodo: str, hoje: str | None = None) -> dict | None:
+def selecionar(periodo: str, hoje: str | None = None, exigir: bool = False) -> dict | None:
     hoje = hoje or datetime.now(FUSO).date().isoformat()
     if os.getenv("PUBLICAR_ATIVO", "false").strip().lower() != "true":
-        print("PUBLICAR_ATIVO não está 'true': nada será publicado.")
+        aviso = "PUBLICAR_ATIVO não está true: publicação desabilitada."
+        if exigir:
+            raise SystemExit(aviso)
+        print(aviso)
         _saida(publicar="false")
         return None
     publicados = {p["id"] for p in _ler(PUBLICADOS, {"registros": []})["registros"]}
@@ -48,7 +51,10 @@ def selecionar(periodo: str, hoje: str | None = None) -> dict | None:
                   if r.get("modo") == "rotina" and r.get("periodo") == periodo
                   and r.get("data_brt") == hoje and r.get("artifact_id")]
     if not candidatos:
-        print(f"Nenhum episódio de {periodo} produzido hoje ({hoje}).")
+        aviso = f"FALHA: nenhum episódio de {periodo} produzido hoje ({hoje}). Verificar workflow de produção."
+        if exigir:
+            raise SystemExit(aviso)
+        print(aviso)
         _saida(publicar="false")
         return None
     ep = candidatos[-1]
@@ -81,6 +87,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("acao", choices=["selecionar", "registrar"])
     p.add_argument("--periodo", choices=["manha", "noite"])
+    p.add_argument("--exigir", action="store_true", help="Falhar quando faltar episódio ou a publicação estiver desativada")
     p.add_argument("--id", default="")
     p.add_argument("--media-id", default="")
     p.add_argument("--permalink", default="")
@@ -88,7 +95,7 @@ def main() -> int:
     if a.acao == "selecionar":
         if not a.periodo:
             raise SystemExit("Informe --periodo")
-        selecionar(a.periodo)
+        selecionar(a.periodo, exigir=a.exigir)
     else:
         registrar(a.id, a.media_id, a.permalink)
     return 0
