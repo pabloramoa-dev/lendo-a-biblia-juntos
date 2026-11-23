@@ -3,7 +3,12 @@ name: Produzir episódios bíblicos
 on:
   schedule:
     - cron: '0 9 * * *'   # 06h em Brasília
+    - cron: '17 9 * * *'  # 06h17: reserva
+    - cron: '41 9 * * *'  # 06h41: reserva
+    - cron: '11 10 * * *' # 07h11: reserva final da manhã
     - cron: '0 21 * * *'  # 18h em Brasília
+    - cron: '17 21 * * *' # 18h17: reserva
+    - cron: '41 21 * * *' # 18h41: reserva
   workflow_dispatch:
     inputs:
       periodo:
@@ -75,10 +80,25 @@ jobs:
         shell: bash
         run: |
           if [ "$EVENTO" = push ]; then
-            # O push testa o motor completo sem consumir um dia da sequência.
-            MODO=piloto
-            PERIODO=noite
-            EPISODIO=N001
+            # Uma única recuperação autorizada para 23/11; outros pushes continuam sendo pilotos.
+            if [ "$(git log -1 --format=%s)" = "Recuperar M008 de 23-11-2026 e ativar reservas da Biblia" ]; then
+              test "$(date +%F)" = "2026-11-23" || { echo "Recuperação fora da data permitida"; exit 1; }
+              MODO=rotina
+              PERIODO=manha
+              EPISODIO=''
+              CRON=''
+              echo "Recuperação do episódio da manhã de 23/11."
+            else
+              MODO=piloto
+              PERIODO=noite
+              EPISODIO=N001
+            fi
+          elif [ "$EVENTO" = schedule ]; then
+            # Crons de reserva são equivalentes aos crons principais.
+            case "$CRON" in
+              "17 9 * * *"|"41 9 * * *"|"11 10 * * *") PERIODO=manha; CRON='' ;;
+              "17 21 * * *"|"41 21 * * *") PERIODO=noite; CRON='' ;;
+            esac
           fi
           python -m tools.rotina preparar --periodo "$PERIODO" --modo "$MODO" --id "$EPISODIO" --cron "$CRON"
 
