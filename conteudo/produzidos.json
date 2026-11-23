@@ -264,6 +264,28 @@
       "run_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/45046045093",
       "artifact_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/45046045093/artifacts/14763557863",
       "artifact_id": "14763557863"
+    },
+    {
+      "id": "N006",
+      "periodo": "noite",
+      "data_brt": "2026-11-22",
+      "modo": "rotina",
+      "referencia": "Salmo 4:4-8",
+      "dia": 6,
+      "voz": "pm_alex+im_nicola",
+      "motor": "Manim + HyperFrames",
+      "duracao_s": 54.53,
+      "resolucao": "1080x1920",
+      "fps": "30/1",
+      "tamanho_mb": 36.22,
+      "codec_video": "h264",
+      "codec_audio": "aac",
+      "sha256": "134adbffc31abcafb399156f2a864c49e4e8c0b7e7f4e854a03348ba80940fb8",
+      "commit_origem": "e12e6c5b4e4bc35fbdbb30bb6c765aa1de369f88",
+      "gerado_em": "2026-11-22T22:29:25.212116-03:00",
+      "run_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/45094249781",
+      "artifact_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/45094249781/artifacts/14782873015",
+      "artifact_id": "14782873015"
     }
   ]
 }
