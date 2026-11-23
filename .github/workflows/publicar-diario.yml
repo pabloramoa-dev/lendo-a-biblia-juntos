@@ -10,8 +10,12 @@ on:
     workflows: ["Produzir episódios bíblicos"]
     types: [completed]
   schedule:
-    - cron: '45 9 * * *'  # 06h45 em Brasília (reserva da manhã)
+    - cron: '45 9 * * *'  # 06h45 em Brasília (primeira reserva)
+    - cron: '20 10 * * *' # 07h20 em Brasília (segunda reserva)
+    - cron: '10 11 * * *' # 08h10 em Brasília (terceira reserva)
     - cron: '0 0 * * *'   # 21h00 em Brasília (Salmo)
+    - cron: '30 0 * * *'  # 21h30 em Brasília (reserva da noite)
+    - cron: '15 1 * * *'  # 22h15 em Brasília (última reserva)
   workflow_dispatch:
     inputs:
       periodo:
@@ -62,9 +66,17 @@ jobs:
           echo "periodo=$P" >> "$GITHUB_OUTPUT"
           echo "Turno: $P"
 
-      - name: Escolher episódio de hoje
+      - name: Escolher episódio de hoje (e detectar falhas de agenda)
         id: sel
-        run: python -m tools.publicar_diario selecionar --periodo "${{ steps.turno.outputs.periodo }}"
+        env:
+          EVENTO: ${{ github.event_name }}
+          PERIODO: ${{ steps.turno.outputs.periodo }}
+        run: |
+          if [ "$EVENTO" = "schedule" ]; then
+            python -m tools.publicar_diario selecionar --periodo "$PERIODO" --exigir
+          else
+            python -m tools.publicar_diario selecionar --periodo "$PERIODO"
+          fi
 
       - name: Conferir a qual conta o token aponta
         if: steps.sel.outputs.publicar == 'true'
