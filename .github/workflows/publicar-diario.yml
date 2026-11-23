@@ -1,0 +1,131 @@
+name: Publicar no Instagram
+
+# Evangelho (manhã): publica assim que a produção das 6h termina,
+#   com uma rodada de reserva às 6h45.
+# Salmo (noite): publica às 21h o episódio produzido às 18h.
+# Só publica com a variável PUBLICAR_ATIVO = true.
+
+on:
+  workflow_run:
+    workflows: ["Produzir episódios bíblicos"]
+    types: [completed]
+  schedule:
+    - cron: '45 9 * * *'  # 06h45 em Brasília (reserva da manhã)
+    - cron: '0 0 * * *'   # 21h00 em Brasília (Salmo)
+  workflow_dispatch:
+    inputs:
+      periodo:
+        description: Turno a publicar (só publica o episódio de HOJE desse turno)
+        type: choice
+        options: [manha, noite]
+        default: manha
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: lendoabibliaexplicada-publicacao
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      TZ: America/Sao_Paulo
+      IG_USER_ID: ${{ secrets.IG_USER_ID_BIBLIA }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN_BIBLIA }}
+      IG_GRAPH_BASE: ${{ vars.IG_GRAPH_BASE }}
+      PUBLICAR_ATIVO: ${{ vars.PUBLICAR_ATIVO }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Definir turno
+        id: turno
+        env:
+          EVENTO: ${{ github.event_name }}
+          CRON: ${{ github.event.schedule }}
+          ESCOLHA: ${{ inputs.periodo }}
+        run: |
+          case "$EVENTO" in
+            workflow_dispatch) P="$ESCOLHA" ;;
+            schedule) if [ "$CRON" = "0 0 * * *" ]; then P=noite; else P=manha; fi ;;
+            *) P=manha ;;
+          esac
+          echo "periodo=$P" >> "$GITHUB_OUTPUT"
+          echo "Turno: $P"
+
+      - name: Escolher episódio de hoje
+        id: sel
+        run: python -m tools.publicar_diario selecionar --periodo "${{ steps.turno.outputs.periodo }}"
+
+      - name: Conferir a qual conta o token aponta
+        if: steps.sel.outputs.publicar == 'true'
+        run: python -m tools.publicar_teste conferir
+
+      - name: Baixar o episódio produzido
+        if: steps.sel.outputs.publicar == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ID: ${{ steps.sel.outputs.id }}
+          ART: ${{ steps.sel.outputs.artifact }}
+        run: |
+          mkdir -p midia
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ART}/zip" > midia/pacote.zip
+          unzip -o -q midia/pacote.zip -d midia
+          test -f "midia/${ID}.mp4"
+          test -f midia/legenda.txt
+          echo "Legenda:"; cat midia/legenda.txt
+
+      - name: Hospedar o MP4 num endereço público (branch midia)
+        id: hospedar
+        if: steps.sel.outputs.publicar == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ID: ${{ steps.sel.outputs.id }}
+        run: |
+          D=$(mktemp -d)
+          cp "midia/${ID}.mp4" "$D/"
+          cd "$D"
+          git init -q -b midia
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "${ID}.mp4"
+          git commit -q -m "Vídeo ${ID} [skip ci]"
+          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" midia
+          URL="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/midia/${ID}.mp4"
+          for i in $(seq 1 30); do
+            if curl -fsI "$URL" >/dev/null; then break; fi
+            sleep 5
+          done
+          curl -fsI "$URL" >/dev/null
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+
+      - name: Publicar o Reel
+        id: pub
+        if: steps.sel.outputs.publicar == 'true'
+        run: python -m tools.publicar_teste publicar --video-url "${{ steps.hospedar.outputs.url }}" --legenda midia/legenda.txt
+
+      - name: Registrar publicação
+        if: steps.sel.outputs.publicar == 'true' && steps.pub.outputs.media_id != ''
+        env:
+          ID: ${{ steps.sel.outputs.id }}
+          MEDIA_ID: ${{ steps.pub.outputs.media_id }}
+          PERMALINK: ${{ steps.pub.outputs.permalink }}
+        run: |
+          git pull --ff-only origin main
+          python -m tools.publicar_diario registrar --id "$ID" --media-id "$MEDIA_ID" --permalink "$PERMALINK"
+          git add conteudo/publicados_instagram.json
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m "Registrar publicação $ID no Instagram"
+            git push origin HEAD:main
+          fi

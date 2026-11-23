@@ -111,8 +111,8 @@ def produzir():
     legenda = (f"Dia {item['dia']} · {item['referencia_exibida']}\n\n"
                "Leitura da Bíblia Livre, com explicação em palavras simples.\n\n"
                + (item.get("pergunta", "") + "\n\n" if item.get("pergunta") else "")
-               + "Lendo a Bíblia Explicada · @lendoabibliaexplicada\n"
-               "#LendoABibliaExplicada #Biblia #PalavraDeDeus\n")
+               + "Lendo a Bíblia Juntos · @lendoabibliaexplicada\n"
+               "#LendoABibliaJuntos #Biblia #PalavraDeDeus\n")
     (destino / "legenda.txt").write_text(legenda, encoding="utf-8")
     meta = {**job, "referencia": item["referencia_exibida"], "dia": item["dia"],
             "voz": dados["voz"], "motor": "Manim + HyperFrames", **tecnico,

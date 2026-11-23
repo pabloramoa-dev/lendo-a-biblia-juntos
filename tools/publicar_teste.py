@@ -90,6 +90,10 @@ def publicar(video_url: str, legenda: str) -> dict:
     info = _chamar("GET", f"{base}/{media_id}", {"fields": "permalink", "access_token": tok})
     resultado = {"media_id": media_id, "permalink": info.get("permalink")}
     print(json.dumps(resultado, ensure_ascii=False))
+    saida = os.getenv("GITHUB_OUTPUT")
+    if saida:
+        with open(saida, "a", encoding="utf-8") as f:
+            f.write(f"media_id={media_id}\npermalink={resultado['permalink'] or ''}\n")
     resumo = os.getenv("GITHUB_STEP_SUMMARY")
     if resumo:
         with open(resumo, "a", encoding="utf-8") as f:
