@@ -60,7 +60,7 @@ jobs:
         run: |
           case "$EVENTO" in
             workflow_dispatch) P="$ESCOLHA" ;;
-            schedule) if [ "$CRON" = "0 0 * * *" ]; then P=noite; else P=manha; fi ;;
+            schedule) case "$CRON" in "0 0 * * *"|"30 0 * * *"|"15 1 * * *") P=noite ;; *) P=manha ;; esac ;;
             *) P=manha ;;
           esac
           echo "periodo=$P" >> "$GITHUB_OUTPUT"
