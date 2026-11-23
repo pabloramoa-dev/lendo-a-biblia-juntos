@@ -1,0 +1,112 @@
+name: Publicar teste (manual)
+
+# Só roda quando alguém clica em "Run workflow". Não tem agendamento.
+# Independe de PUBLICAR_ATIVO: é o teste manual da conexão com o Instagram.
+
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: conferir = só confere a conta; publicar = posta 1 Reel
+        type: choice
+        options: [conferir, publicar]
+        default: conferir
+      confirmacao:
+        description: Para publicar, digite PUBLICAR
+        type: string
+        default: ''
+      episodio:
+        description: ID do episódio já produzido (vazio = o mais recente)
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: lendoabibliaexplicada-publicacao
+  cancel-in-progress: false
+
+jobs:
+  teste:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      IG_USER_ID: ${{ secrets.IG_USER_ID_BIBLIA }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN_BIBLIA }}
+      IG_GRAPH_BASE: ${{ vars.IG_GRAPH_BASE }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Conferir a qual conta o token aponta
+        run: python -m tools.publicar_teste conferir
+
+      - name: Checar confirmação
+        if: inputs.modo == 'publicar'
+        env:
+          CONFIRMACAO: ${{ inputs.confirmacao }}
+        run: |
+          if [ "$CONFIRMACAO" != "PUBLICAR" ]; then
+            echo "Para publicar, digite PUBLICAR no campo de confirmação. Nada foi publicado."
+            exit 1
+          fi
+
+      - name: Baixar o episódio já produzido
+        id: episodio
+        if: inputs.modo == 'publicar'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EPISODIO: ${{ inputs.episodio }}
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          regs = json.load(open('conteudo/produzidos.json'))['registros']
+          alvo = os.environ.get('EPISODIO', '').strip()
+          regs = [r for r in regs if r.get('artifact_id') and (not alvo or r['id'] == alvo)]
+          if not regs:
+              raise SystemExit(f'Episódio não encontrado: {alvo or "(nenhum produzido)"}')
+          r = regs[-1]
+          print(f"id={r['id']}")
+          print(f"artifact={r['artifact_id']}")
+          PY
+          mkdir -p midia
+          ART=$(grep '^artifact=' "$GITHUB_OUTPUT" | tail -1 | cut -d= -f2)
+          ID=$(grep '^id=' "$GITHUB_OUTPUT" | tail -1 | cut -d= -f2)
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ART}/zip" > midia/pacote.zip \
+            || { echo "O vídeo $ID não está mais disponível (artifacts duram 7 dias)."; exit 1; }
+          unzip -o -q midia/pacote.zip -d midia
+          test -f "midia/${ID}.mp4"
+          test -f midia/legenda.txt
+          echo "Legenda que será publicada:"; cat midia/legenda.txt
+
+      - name: Hospedar o MP4 num endereço público (branch midia-teste)
+        id: hospedar
+        if: inputs.modo == 'publicar'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ID: ${{ steps.episodio.outputs.id }}
+        run: |
+          D=$(mktemp -d)
+          cp "midia/${ID}.mp4" "$D/"
+          cd "$D"
+          git init -q -b midia-teste
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "${ID}.mp4"
+          git commit -q -m "Vídeo de teste ${ID} [skip ci]"
+          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" midia-teste
+          URL="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/midia-teste/${ID}.mp4"
+          for i in $(seq 1 30); do
+            if curl -fsI "$URL" >/dev/null; then break; fi
+            sleep 5
+          done
+          curl -fsI "$URL" >/dev/null
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+
+      - name: Publicar 1 Reel
+        if: inputs.modo == 'publicar'
+        run: python -m tools.publicar_teste publicar --video-url "${{ steps.hospedar.outputs.url }}" --legenda midia/legenda.txt
