@@ -330,6 +330,28 @@
       "run_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/45331107275",
       "artifact_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/45331107275/artifacts/14893687063",
       "artifact_id": "14893687063"
+    },
+    {
+      "id": "M009",
+      "periodo": "manha",
+      "data_brt": "2026-11-24",
+      "modo": "rotina",
+      "referencia": "Marcos 1:35-39",
+      "dia": 9,
+      "voz": "pm_alex+im_nicola",
+      "motor": "Manim + HyperFrames",
+      "duracao_s": 54.6,
+      "resolucao": "1080x1920",
+      "fps": "30/1",
+      "tamanho_mb": 36.1,
+      "codec_video": "h264",
+      "codec_audio": "aac",
+      "sha256": "452220eba02206272a3b0c427af4e511410dbdbd492fc7653fa4564790cd334f",
+      "commit_origem": "28bc07a1f76b04679ffbae903fbdb8adb13fcb06",
+      "gerado_em": "2026-11-24T16:58:37.449292-03:00",
+      "run_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/45474742813",
+      "artifact_url": "https://github.com/pabloramoa-dev/lendo-a-biblia-juntos/actions/runs/45474742813/artifacts/14960755173",
+      "artifact_id": "14960755173"
     }
   ]
 }
