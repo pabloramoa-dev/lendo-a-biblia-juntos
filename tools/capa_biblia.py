@@ -92,14 +92,14 @@ def desenhar(frame, meta):
     d.rounded_rectangle((70, 440, 1010, 830), radius=42, fill=fundo, outline=destaque, width=5)
     d.text((540, 492), tipo, font=fonte(tipo, 42, 850), fill=destaque, anchor="mm")
     d.line((185, 533, 895, 533), fill=destaque, width=3)
-    bloco(d, titulo, 646, 850, 3, 70, 42, "white")
+    bloco(d, titulo, 646, 850, 3, 62, 42, "white")
     d.text((540, 785), ref, font=fonte(ref, 56, 860), fill=destaque, anchor="mm")
 
     d.rounded_rectangle((70, 1260, 1010, 1475), radius=34, fill=fundo, outline=destaque, width=4)
     if pergunta:
         d.text((540, 1295), "REFLEXÃO PARA HOJE", font=fonte("REFLEXÃO PARA HOJE", 32, 850),
                fill=destaque, anchor="mm")
-        bloco(d, pergunta, 1370, 850, 3, 44, 30, "white")
+        bloco(d, pergunta, 1367, 850, 3, 38, 30, "white")
     else:
         bloco(d, "Entenda a Palavra de Deus e leve para a sua vida", 1355, 850, 2, 44, 34, "white")
     rodape = f"DIA {meta['dia']}  •  BÍBLIA EXPLICADA"
