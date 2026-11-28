@@ -60,12 +60,13 @@ def conferir() -> dict:
     return conta
 
 
-def publicar(video_url: str, legenda: str) -> dict:
+def publicar(video_url: str, legenda: str, cover_url: str = "") -> dict:
     conferir()
     base, user, tok = _cfg()
     container = _chamar("POST", f"{base}/{user}/media", {
         "media_type": "REELS",
         "video_url": video_url,
+        **({"cover_url": cover_url} if cover_url else {}),
         "caption": legenda,
         "share_to_feed": "true",
         "access_token": tok,
@@ -106,6 +107,7 @@ def main() -> int:
     p.add_argument("acao", choices=["conferir", "publicar"])
     p.add_argument("--video-url", default="")
     p.add_argument("--legenda", default="")
+    p.add_argument("--cover-url", default="")
     a = p.parse_args()
     if a.acao == "conferir":
         conferir()
@@ -113,7 +115,7 @@ def main() -> int:
         if not a.video_url or not a.legenda:
             raise SystemExit("Informe --video-url e --legenda")
         with open(a.legenda, encoding="utf-8") as f:
-            publicar(a.video_url, f.read().strip())
+            publicar(a.video_url, f.read().strip(), a.cover_url)
     return 0
 
 
