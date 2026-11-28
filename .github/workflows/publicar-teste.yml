@@ -83,7 +83,17 @@ jobs:
           test -f midia/legenda.txt
           echo "Legenda que será publicada:"; cat midia/legenda.txt
 
-      - name: Hospedar o MP4 num endereço público (branch midia-teste)
+      - name: Gerar capa exclusiva para a grade
+        if: inputs.modo == 'publicar'
+        env:
+          ID: ${{ steps.episodio.outputs.id }}
+        run: |
+          command -v ffmpeg >/dev/null || { sudo apt-get update && sudo apt-get install -y ffmpeg; }
+          test -f /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf || { sudo apt-get update && sudo apt-get install -y fonts-dejavu-core; }
+          python -m pip install 'Pillow>=10,<13'
+          python -m tools.capa_biblia "midia/${ID}.mp4" midia/episodio.json "midia/${ID}.jpg"
+
+      - name: Hospedar o MP4 e a capa num endereço público (branch midia-teste)
         id: hospedar
         if: inputs.modo == 'publicar'
         env:
@@ -91,22 +101,26 @@ jobs:
           ID: ${{ steps.episodio.outputs.id }}
         run: |
           D=$(mktemp -d)
-          cp "midia/${ID}.mp4" "$D/"
+          cp "midia/${ID}.mp4" "midia/${ID}.jpg" "$D/"
           cd "$D"
           git init -q -b midia-teste
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add "${ID}.mp4"
+          git add "${ID}.mp4" "${ID}.jpg"
           git commit -q -m "Vídeo de teste ${ID} [skip ci]"
           git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" midia-teste
-          URL="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/midia-teste/${ID}.mp4"
+          REV=$(git rev-parse HEAD)
+          URL="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${REV}/${ID}.mp4"
+          CAPA="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${REV}/${ID}.jpg"
           for i in $(seq 1 30); do
-            if curl -fsI "$URL" >/dev/null; then break; fi
+            if curl -fsI "$URL" >/dev/null && curl -fsI "$CAPA" >/dev/null; then break; fi
             sleep 5
           done
           curl -fsI "$URL" >/dev/null
+          curl -fsI "$CAPA" >/dev/null
           echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "cover_url=$CAPA" >> "$GITHUB_OUTPUT"
 
       - name: Publicar 1 Reel
         if: inputs.modo == 'publicar'
-        run: python -m tools.publicar_teste publicar --video-url "${{ steps.hospedar.outputs.url }}" --legenda midia/legenda.txt
+        run: python -m tools.publicar_teste publicar --video-url "${{ steps.hospedar.outputs.url }}" --legenda midia/legenda.txt --cover-url "${{ steps.hospedar.outputs.cover_url }}"
